@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+*{margin: 0;padding:0;}
+ul,li{list-style: none;}
+a{text-decoration: none; color:#333;}
+.cf:after{
+    content: '';
+    display: block;
+    clear:both;
+}
+body{
+    font-family: "Noto Sans KR", sans-serif;
+}
+.wrap{
+    width: 100%;
+}
+.section3{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    
+}
+.section3 h3{ 
+    font-size: 28px;
+    font-weight: 500;
+}
+.prod_list{
+    width: 1200px;
+    height: auto;
+    overflow: hidden;
+}
+.prod_list ul{
+    display: flex;
+}
+.prod_list ul .frame img{
+    width: 224px;
+    height: 250px;
+}
+.prod_list ul li a{
+    display: block;
+    width: 224px;
+    margin-right: 20px;
+    
+}
+.content .prd_name{
+    font: 16px;
+}
+.content .price .price_origin p{
+    text-decoration: line-through;
+    font-size: 14px;
+    color: #999;
+}
+.content .price .flexbox span{
+    font-weight: bold;
+}
+.content .price .flexbox .discount{
+    font-size: 18px;
+    color: #ff6733;
+    font-weight: bold;
+}
+
+.prev{
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 0;
+    background: url(../img/main_prev_btn.png);
+}
+.next{
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    right: 0;
+    background: url(../img/main_next_btn.png);
+}
