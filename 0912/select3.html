@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* select{
+            vertical-align: top;
+        } */
+        form fieldset{margin-bottom: 25px;}
+        form legend{font-size: 15px; font-weight: bold;}
+        form ul li{list-style: none; margin: 15px 0;}
+        .reg{font-size: 14px; width: 110px; font-weight: bold; float: left;}
+    </style>
+</head>
+<body>
+    <h1>여름방학특강계획</h1>
+    <form action="">
+        <fieldset>
+            <legend>수강과목</legend>
+            <ul>
+                <li>
+                    <label for="subj" class="reg">영어회화(초급)</label>
+                    <input type="text" name="" id="subj" value="오전 9:00" readonly>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>신청자</legend>
+            <ul>
+                <li>
+                    <label for="id" class="reg">학번</label>
+                    <input type="text" name="" id="id" autofocus>
+                </li>
+                <li>
+                    <label for="name" class="reg">이름</label>
+                    <input type="text" name="" id="name">
+                </li>
+                <li>
+                    <label for="name" class="reg">학과</label>
+                    <select  name="class" id="class">
+                        <option value="archi">건축</option>
+                        <option value="archi">기계</option>
+                        <option value="archi">산업</option>
+                        <option value="archi">전기</option>
+                        <option value="archi" selected>멀티</option>
+                        <option value="archi">화학</option>
+                    </select>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>교재 주문</legend>
+            <ul>
+                <li>
+                    <label for="book" class="reg">교재</label>
+                    <input type="number" name="" id="book" value="1" min="1" max="3">
+                </li>
+                <li>
+                    <label for="wsheet" class="reg">워크시트</label>
+                    <input type="number" name="" id="wsheet" value="1" min="1" max="3">
+                </li>
+                <li>
+                    <label for="group" class="reg">단체주문</label>
+                    <input type="number" name="" id="group" value="10" min="10" max="100" step="10">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <button type="submit" value="submit">신청하기</button>
+            <button type="reset" value="reset">다시쓰기</button>
+        </fieldset>
+    </form>
+    
+</body>
+</html>

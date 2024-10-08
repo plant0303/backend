@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폴로와 프리토</title>
+    <style>
+        #start {
+            display: block;
+        }
+
+        ​#game1, #end {
+            display: none;
+        }
+        #result{
+            display: flex;
+        }
+        .hidden{
+            visibility: hidden;
+        }
+    </style>
+
+</head>
+
+​
+
+<body>
+
+    <div id="start">
+        <button id="start_btn">start</button>
+    </div>
+
+    <div id="game1">
+        <div id="question">
+            <div id="result"></div>
+        </div>
+    </div>
+    <div id="end">
+        겜끝
+        <div id="score"></div>
+    </div>
+
+    <script lang="javascript">
+
+        // 난수생성, 키보드 입력이 화살표를 인식하도록, 입력값과 난수가 같은지 확인
+        // 틀리면 문제 되돌리기, 레벨별 단계 올리기, 시간제한
+
+        // 화면바꾸기 
+
+        const $start = document.querySelector('#start');
+        const $start_btn = document.querySelector('#start_btn');
+        const $game1 = document.querySelector('#game1');
+        const $end = document.querySelector('#end');
+        const $score = document.querySelector('#score');
+
+        let $question = document.querySelector('#question');
+        let $result = document.querySelector('#result');
+        let level = 1;
+
+        let startTime;
+        let endTime;
+
+        $start_btn.addEventListener("click", function () {
+            toggleDisplay($start, $game1);
+            startTime = new Date();
+            const count = hardStep(0, startTime);
+            createArrow(count);
+        })
+
+        function hardStep(level){
+                let arrowCount = '';
+                switch(level){
+                    case 0: return arrowCount = 4; break;
+                    case 1: return arrowCount = 4; break;
+                    case 2: return arrowCount = 4; break;
+                    case 3: return arrowCount = 6; break;
+                    case 4: return arrowCount = 6; break;
+                    case 5: return arrowCount = 6; break;
+                    case 6: return arrowCount = 10; break;
+                    case 7: return arrowCount = 10; break;
+                    case 8: return arrowCount = 10; break;
+                    case 9: return arrowCount = 10; break;
+                    default :
+                        endTime = new Date(); 
+                        const current = (endTime - startTime) / 1000;
+                        console.log(current);
+                        $score.innerHTML = `${current} 초`;
+                        toggleDisplay($game1, $end); 
+                        break;
+                }
+            
+        
+        }
+
+
+        function toggleDisplay($hide, $show) {
+            $hide.style.display = "none";
+            $show.style.display = "block";
+        }
+
+        function getRandomArrow(arrows) {
+            return arrows[Math.floor(Math.random() * arrows.length)];
+        }
+
+        function displayArrow(arrow, i) {
+            const newDiv = document.createElement('div');
+            const resultText = document.createTextNode(arrow);
+            newDiv.id = `n${i}`;
+            newDiv.appendChild(resultText); //문자열 출력
+            $result.appendChild(newDiv);
+        }
+
+
+        let hiddenArrow = 0;
+        function handleKeyDown(event) {
+            const input_arrow = getInputArrow(event.keyCode);
+            console.log(input_arrow, String.fromCodePoint(input_arrow));
+
+            if (result_arrow[0] == input_arrow) {
+                
+                deleteArrows();
+                if(result_arrow == ""){
+                    level = level + 1;
+                    console.log(level);
+                    const cnt = hardStep(level);
+                    createArrow(cnt);               
+                }
+            } else if (result_arrow[0] > 0 && result_arrow != "") {
+                console.log('틀렸음');
+                returnArrows();
+                hiddenArrow = 0;
+
+            }
+        }
+
+        function getInputArrow(keyCode) {
+            switch (keyCode) {
+                case 37: //좌
+                    return input_arrow = '8592';
+                    break;
+                case 38: //상
+                    return input_arrow = '8593';
+                    break;
+                case 39: //우
+                    return input_arrow = '8594';
+                    break;
+                case 40: //하
+                    return input_arrow = '8595';
+                    break;
+            }
+        }
+
+        function createArrow(count) {
+            // 랜덤 화살표 생성하기
+            hiddenArrow = 0;
+            const arrows = ['→', '←', '↑', '↓'];
+            result_arrow = []; //정답 배열
+            return_arrow = []; //되돌리기용 배열
+            $result.innerHTML = '';
+            for (var i = 0; i < count; i++) {
+                const randomArrow = getRandomArrow(arrows);
+                displayArrow(randomArrow, i);
+
+                result_arrow.push(randomArrow.charCodeAt()); //아스키코드 배열
+                return_arrow.push(randomArrow.charCodeAt()); //아스키코드 배열
+                console.log(randomArrow, randomArrow.charCodeAt()); //확인용 출력
+            }
+
+            //화살표 입력받기
+            document.addEventListener("keydown", handleKeyDown);
+        }
+        function deleteArrows(){ //성공시
+            
+            //정답 삭제
+            result_arrow.shift();
+            //기존 문자열 삭제
+            let nowArrow = document.querySelector(`#n${hiddenArrow}`);
+            hiddenArrow = hiddenArrow + 1;
+
+            nowArrow.classList.add('hidden');
+        }
+        function returnArrows(){ //실패시
+            result_arrow = return_arrow.slice(); //이거몰라서지피티한테물어봄
+            $result.innerHTML = '';
+            hiddenArrow = 0;
+            for (let i = 0; i < return_arrow.length; i++) {
+                const newDiv = document.createElement('div');
+                const resultText = document.createTextNode(String.fromCodePoint(result_arrow[i]));
+                newDiv.id = `n${hiddenArrow}`;
+                hiddenArrow = hiddenArrow + 1;
+                newDiv.appendChild(resultText); //문자열 출력
+                $result.appendChild(newDiv);
+            }
+        }
+    </script>
+</body>
+</html>

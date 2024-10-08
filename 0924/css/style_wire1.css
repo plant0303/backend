@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul, li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+#wrap{
+    width: 1200px;
+    height: 700px;
+    margin: 0 auto;
+    border: 1px solid #333;
+}
+header{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: skyblue;
+}
+header .logo{
+    float: left;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+header .mainmenu{
+    float: right;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+/*자식선택자*/
+.mainmenu > li{
+    float: left;
+}
+.mainmenu li{
+    background-color: yellow;
+}
+.mainmenu li a{
+    display: block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+}
+.mainmenu li ul{
+    display: none;
+}
+.mainmenu li:hover ul{
+    display: block;
+}
+.mainmenu li a:hover{
+    background-color: #333;
+    color: #eee;
+}
+#img_slide{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(255, 207, 112);
+}
+section{
+    width: 100%;
+    overflow: hidden;
+}
+.notice{
+    width: 400px;
+    height: 200px;
+    background-color: skyblue;
+    float: left;
+}
+.banner{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(255, 236, 197);
+    float: left;
+}
+.icons{
+    width: 400px;
+    height: 200px;
+    background-color: skyblue;
+    float: left;
+}
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: yellowgreen;
+}
+footer>div{
+    float: left;
+}
+.f_logo{
+    width: 250px;
+    height: 100px;
+    background-color: brown;
+}
+.f_menu{
+    width: 950px;
+    height: 50px;
+    background-color: #333;
+}
+.f_copy{
+    width: 950px;
+    height: 50px;
+    background-color: #c57272;
+}

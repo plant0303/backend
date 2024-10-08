@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        @import url(https://db.onlinewebfonts.com/c/84cb021d5f9af287ffff84b61beef6dc?family=clockicons);
+        #timer1, #timer2{
+            font-family: "clockicons";
+        }
+    </style>
+</head>
+<body>
+<div id="timer1"></div>
+<div id="timer2"></div>
+<script>
+let $timer1 = document.querySelector('#timer1');
+let $timer2 = document.querySelector('#timer2');
+function timeoutTimer(endTime, timeout) {
+  const now = Date.now();
+  const end = endTime.getTime();
+  const timeLeft1 = (end - now) / 100;
+  const timeLeft2 = (end - now) / 1000;
+
+  $timer1.innerHTML = `남은 시간: ${Math.round(timeLeft1)}ms`;
+  $timer2.innerHTML = `남은 시간: ${Math.round(timeLeft2)}ms`;
+  if (timeLeft2 <= 0) {
+    console.log('타이머 종료');
+    return;
+  }
+
+  setTimeout(() => {
+    timeoutTimer(endTime, timeout);
+  }, timeout);
+}
+
+// 5초 타이머 시작
+timeoutTimer(new Date(Date.now() + 5000), 100);
+</script>
+</body>
+
+</html>

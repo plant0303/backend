@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+}
+.wrap{
+    width: 800px;
+    margin: 0 auto;
+    border: 1px solid #333;
+}
+header{
+    position: relative;
+    background: url(../img/top2.jpg) no-repeat;
+    height: 300px;
+    overflow: hidden;
+}
+header h1{
+    position: absolute;
+    color: #fff;
+    right: 50px;
+    bottom: 80px;
+}
+nav{
+    background-color: rgb(49, 33, 29);
+    border: 1px solid #333;
+    height: 60px;
+}
+nav ul{
+    display: flex;
+    justify-content: space-evenly
+}
+nav ul li{
+    line-height: 40px;
+    float: left;
+    margin-top: 10px;
+}
+nav ul li a{
+    display: block;
+    height: 40px;
+    color: #fff;
+    width: 130px;
+    text-align: center;
+}
+nav ul li a:hover{
+    border: 1px solid #fff;
+    border-radius: 20px;
+    margin: -1px;
+}
+.content{
+    overflow: hidden;
+}
+.content .coffee{
+    width: 550px;
+    height: 500px;
+    float: left;
+    background-color: #cbcbcb;
+}
+
+h3{
+    text-align: center;
+    padding: 10px 0;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+section article{
+    border: 1px solid #333;
+    width: 230px;
+    height: 190px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: justify;
+    font-size: 16px;
+    background-color: #fff;
+}
+section article h4{
+    padding-left: 30px;
+    background: url(../img/kong.png) no-repeat;
+    margin-bottom: 10px;
+}
+.content aside{
+    width: 250px;
+    height: 500px;
+    float: left;
+    background-color: #6d5e55;
+    text-align: center;
+}
+.content aside img{
+    width: 220px;
+    margin-bottom: 10px;
+}
+
+footer{
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #333;
+    color: #fff;
+}

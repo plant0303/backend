@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.wrap{
+    width: 900px;
+    margin: 0 auto;
+    /* 전체 중앙정렬 */
+}
+header{
+    position: relative;
+    height: 300px;
+    background: url(../images/top.jpg) 0 30%;
+}
+.logo{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    color: white;
+}
+nav{
+    width: 900px;
+    height: 70px;
+    background-color: #2a1d0a;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li{
+    float: left;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+nav ul li a{
+    display: block;
+    width: 150px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    background-color: #fff;
+    color: #000;
+    text-decoration: underline;
+}
+section{
+    width: 650px;
+    height: 550px;
+    background-color: #ccc;
+    float: left;
+}
+section h3{
+    padding: 10px 0;
+    text-align: center;
+}
+section article{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 270px;
+    height: 200px;
+    border: 1px solid #333;
+    float: left;
+}
+section article h4{
+    background: url(../images/kong.png) no-repeat;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+article p{
+    line-height: 170%;
+    text-align: justify;
+}
+.content{
+    overflow: hidden;
+}
+aside{
+    width: 250px;
+    height: 550px;
+    background-color: #726054;
+    float: left;
+    text-align: center;
+}
+aside h3{
+    padding: 10px 0;
+}
+aside img{
+    width: 220px;
+    padding-bottom: 10px;
+}
+footer{
+    height: 60px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 60px;
+}

@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{margin: 0; padding: 0; text-decoration: none; list-style: none; box-sizing: border-box; font-family: "Open sans";}
+.wrap{
+
+}
+header{
+    position: relative;
+    display: flex;
+    height: 60px;
+    z-index: 999;
+    
+}
+.logo{
+    position: absolute;
+    z-index: 2;
+}
+.logo img{
+    height: 60px;
+}
+nav{
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ffffff28;
+    z-index: 3;
+}
+nav > ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+nav > ul > li > a{
+    display: block;
+    color: #fff;
+    width: 160px;
+    line-height: 60px;
+    font-size: 18px;
+    text-align: center;
+}
+
+nav > ul > li > ul{
+    text-align: center;
+    opacity: 0;
+    transition: 0.2s;
+    
+}
+nav > ul > li > ul > li{
+    margin-top: 13px;
+}
+nav > ul > li > ul > li > a{
+    font-size: 15px;
+    color: #fff;
+}
+.login{
+    position: absolute;
+    right: 0;
+    display: flex;
+    z-index: 2;
+}
+.login div .ico_login, .login div .ico_join{
+    position: relative;
+    background: url(../images/icon.png) no-repeat;
+    display: inline-block;
+
+    background-position: -2px -2px;
+    top: 4px;
+    width: 19px;
+    height: 18px;
+    z-index: 10;
+}
+.login div .ico_join{
+    background-position: -28px -2px;
+}
+.login div a{
+    display: inline-block;
+    width: 100px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background-color: #f2f2f2;
+    font-size: 12px;
+}
+.main img{
+    width: 100%;
+    margin-top: -60px;
+
+}
+.sub_shadow{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 0px;
+    background-color: #042e6f;;
+    z-index: 1;
+    transition: 0.3s;
+}
+nav > ul:hover > li > ul{
+    display: block;
+    opacity: 1;
+}
+nav:hover + .login + .sub_shadow{
+    height: 300px;
+}
+
+.gnb>ul>li>a:after {
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 0;
+
+    z-index: 15;
+    width: 12px;
+    height: 2px;
+    background-color: #fff;
+    -webkit-transition: all .4s cubic-bezier(.25, .46, .45, 1);
+    transition: all .4s cubic-bezier(.25, .46, .45, 1);
+}
+
+
+.gnb > li > a:after {
+    display: block;
+    position: relative;
+    content: '';
+    bottom: 2px;
+    left: 50%;
+    z-index: 15;
+    width: 0px;
+    height: 2px;
+    background-color: #fff;
+    -webkit-transition: all .4s cubic-bezier(.25, .46, .45, 1);
+    transition: all .4s cubic-bezier(.25, .46, .45, 1);
+}
+
+.gnb > li:hover > a:after{
+    left:0;
+    width:100%;
+}
+nav > ul > li > ul > li > a:hover{
+    color: #2fdfff;
+}
+nav > ul > li > ul > li > a::after{
+    content: '';
+    display: block;
+    position: relative;
+    width: 0px;
+    height: 2px;
+    background-color: #2fdfff;
+    margin: 0 auto;
+    transition: 0.3s;
+}
+
+nav > ul > li > ul > li:hover > a::after{
+    width: 100px;
+}

@@ -1,0 +1,89 @@
+*{margin: 0; padding: 0; }
+
+section{
+    margin: 0 auto;
+    width: 1070px;
+    height: 800px;
+}
+.content{
+    width: 1070px;
+    height: 800px;
+    position: relative;
+    border: 1px solid red;
+}
+.box{
+    position: absolute;
+    float: left;
+}
+.box2{
+    float: left;
+    left: 270px;
+}
+.box3{
+    left: 540px;
+}
+.box4{
+    right: 0;
+}
+.box5{
+    top: 270px;
+}
+.box6{
+    top: 270px;
+    left: 540px;
+}
+.box7{
+    bottom: 0;
+    height: 260px;
+}
+.box8{
+    bottom: 0;
+    left: 270px;
+    height: 260px;
+}
+.box9{
+    height: 260px;
+    right: 0;
+    bottom: 0;
+    float: left;
+}
+
+.box::before{
+    content: "";
+    width: 0%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background: rgba(4, 69, 244, 0.85);
+    transition: 0.5s;
+}
+.box:hover:before{
+    width: 100%;
+}
+.box p{
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: 80px;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s;
+    background: url(./image/more.png) no-repeat 50% 40%;
+
+}
+.box2 p{
+    position: absolute;
+    width: 260px;
+    height: 530px;
+    padding-top: 80px;
+}
+.box8 p, .box6 p{
+    position: absolute;
+    width: 530px;
+    height: 260px;
+    padding-top: 10px;
+}
+.box:hover p{
+    opacity: 1;
+}

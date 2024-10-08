@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+TC:wght@200..900&display=swap');
+*{padding: 0; margin: 0; font-family: "Noto Sans", sans-serif; list-style: none; text-decoration: none;}
+a{color: #333;}
+.cf::after{
+    /* 높이를 만들어줘 */
+    content: '';
+    display: block;
+    clear: both;
+}
+#wrap{
+    width: 100%; 
+}
+.franchise{
+    padding: 50px;
+    margin: 0 auto;
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+}
+
+.inner .title h2{
+    font-family: "Noto Serif TC", serif;
+    color: #1e1e1e;
+    font-size: 43px;
+}
+.card_list{
+    width: 1440px;
+    padding: 50px 0;
+    margin: 0 auto;
+}
+.card_list ul{
+    width: 100%;
+}
+.card_list ul li{
+    float: left;
+    width: 341px;
+    height: 430px;
+    border: 1px solid #333;
+    box-sizing: border-box;
+    margin-right: 25px;
+    text-align: center;
+}
+
+.card_list ul li:last-child{
+    margin-right: 0;
+}
+.card_list ul li .pic img{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.card_list ul li .num{
+
+}
+.card_list ul li .num span{
+    display: block;
+    /* 중앙정렬 */
+    margin: 20px auto;
+    background-color: #003273;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+}
+
+.card_list ul li .txt h3{
+    color: #003e73;
+    font-size: 20px;
+    padding: 10px 0;
+}
+.card_list ul li .txt p{
+    color: #1e1e1e;
+}
+.button_wrap{
+    text-align: center;
+}
+.button_wrap p{
+    color: #003273;
+    font-size: 20px;
+    padding: 50px 0 25px;
+    
+}
+.button_wrap span{
+    font-weight: bold;
+}
+
+.button_wrap a{
+    display: block;
+    width: 320px;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    background-color: #003273;
+    color: #fff;
+    padding: 19px 10px;
+}
+.button_wrap a:hover{
+    background-color: #fff;
+    border: 1px solid #003273;
+    color: #003273;
+}
+.footer{
+    background-color: #003e73;
+    color: #fff;
+
+}
+.footer .inner{
+    width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    padding: 50px 0;
+}
+.footer .inner .logo{
+    float: left;
+    width: 220px;
+}
+.footer .inner .address{
+    float: left;
+    box-sizing: border-box;
+    padding: 0 120px;
+}
+.privacy a{
+    color: red;
+    font-weight: bold;
+    margin-top: -20px;
+}
+.address p{
+    padding-top: 15px;
+}
+.address p span{
+    position: relative;
+    display: inline-block;
+    margin-right: 7px;
+    margin-bottom: 4px;
+}
+.address p span.bar::before{
+    content: '|';
+    display: inline-block;
+    margin-right: 7px;
+}
+.footer .inner .family{
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    right: 40px;
+    top: 60px;
+    border: 1px solid #fff;
+    background-color: #003273;
+    font-size: 13px;
+}
+.family label{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    line-height: 40px;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+.family select{
+    width: 100%;
+    height: auto;
+    padding: 11px 10px;
+    line-height: normal;
+    border: 0;
+    opacity: 0;
+    appearance: none;
+    cursor: pointer;
+}
+.family::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 8px;
+    top: 15px;
+    background: url(../images/ico.png) no-repeat;
+    background-position: -300px 0;
+}

@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* .eyebrow.left{
+    position: absolute;
+    left: 70px; 
+    width: 100px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 20px;
+    top: 110px;
+ }
+ .eyebrow.right{
+    position: absolute;
+    right: 70px; 
+    width: 100px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 20px;
+    top: 110px;
+ } */
+.bigbox{
+    width: 500px; 
+    height: 500px;
+    position: relative;
+    border: 1px solid #333;
+    margin: 100px auto 0;/*좌우 중앙정렬*/
+ }
+
+ .face{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: 10px solid #333;
+    /* background-color: #d59729; */
+    background-color: #45aeff;
+    border-radius: 50%;
+    bottom: 0;
+    box-sizing: border-box;
+ }
+
+ .eyeball.left{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50%;
+    top: 169px;
+    left: 90px;
+ }
+ .eyeball.right{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50%;
+    top: 169px;
+    right: 90px;
+ }
+
+ .nose{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    background-color: #333;
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    margin-left: -20px;
+    z-index: 3;
+ }
+ .mouth{
+    position: absolute;
+    width: 90px;
+    height: 110px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    background-color: #fff;
+    box-sizing: border-box;
+    top: 310px;
+ }
+ .mouth.left{
+    left: 160px;
+    transform: rotate(45deg);
+ }
+ .mouth.right{
+    right: 160px;
+    transform: rotate(-45deg);
+ }
+ .mouth_cover{
+    position: absolute;
+    width: 37px;
+    height: 40px;
+    background-color: #fff;
+    top: 2px;
+    transform: rotate(45deg);
+ }
+ .mouth_cover.left{left: 42px;}
+ .mouth_cover.right{right: 42px;}
+
+ .beard.left{
+    position: absolute;
+    bottom: 120px;
+    left: 100px;
+    z-index: 4;
+ }
+ .line{
+    position: absolute;
+    width: 90px;
+    height: 3px;
+    background-color: #333;
+}
+.line.beard1{transform: rotate(30deg); transform-origin: right; bottom: 30px;}
+.line.beard3{transform: rotate(-30deg); transform-origin: right; bottom: -30px;}
+
+.beard.right{
+    position: absolute;
+    bottom: 120px;
+    right: 180px;
+    z-index: 4;
+}
+.line.beard4{transform: rotate(-30deg); transform-origin: left; bottom: 30px;}
+.line.beard6{transform: rotate(30deg); transform-origin: left; bottom: -30px;}

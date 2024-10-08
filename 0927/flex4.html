@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex-container{
+            width: 1500px;
+            height: 200px;
+            background-color: dodgerblue;
+            /* height: 100px; */
+            display: flex;
+            /* flex-direction: nowrap; */
+            /* flex-wrap: wrap; */
+            /* flex-wrap: wrap-reverse; */
+            align-items: center;
+            justify-content: center;
+            /* justify-content: space-around; */
+            /* justify-content: space-between; */
+            /* justify-content: space-evenly; */
+        }
+        .flex-container > div{
+            display: inline-block;
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            font-size: 30px;
+            line-height: 75px;
+            text-align: center;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>플랙스박스</h1>
+    <div class="flex-container">
+        <div style="flex-grow: 2;">1</div>
+        <div style="flex-grow: 3;">2</div>
+        <div style="flex-grow: 5;">3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+*{
+
+    text-decoration: none;
+}
+header{
+    width: 80%;
+    background-color: #069;
+    padding: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h1{
+    color: white;
+    float: left;
+    width: 40%;
+}
+
+nav{
+
+}
+nav ul li{
+    display: inline;
+    float: left;
+    margin: 15px;
+
+}
+nav ul li a{
+    color: white;
+}
+section{
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid #333;
+}
+article{
+    width: 90%;
+    height: auto;
+    margin: 20px 10px;
+    padding: 10px;
+}
+article h3{
+    background-image: url('images/bg.png');
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+#pet1{
+    border: 1px solid black;
+    border-radius: 20px;
+}
+#pet2{
+    border: 1px solid blue;
+    border-radius: 20px;
+}
+#pet3{
+    border: 1px solid green;
+    border-radius: 30px 20px;
+}
