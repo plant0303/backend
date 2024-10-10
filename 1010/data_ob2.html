@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var today = new Date();
+        console.log(today);
+        var nowYear = today.getFullYear();
+        var nowMonth = today.getMonth() + 1;
+        var nowDate = today.getDate();
+        var nowDay = today.getDay();
+        var nowSi = today.getHours();
+        var nowBun = today.getMinutes();
+        var nowCho = today.getSeconds();
+        var yoil;
+        switch (nowDay) {
+            case 0: yoil = "일"; break;
+            case 1: yoil = "월"; break;
+            case 2: yoil = "화"; break;
+            case 3: yoil = "수"; break;
+            case 4: yoil = "목"; break;
+            case 5: yoil = "금"; break;
+            case 6: yoil = "토"; break;
+            default: yoil = "??"; break;
+        }
+        document.write("<h1>오늘 날짜</h1>");
+        document.write("현재 연도: " + nowYear, "<br>");
+        document.write("현재 월: " + nowMonth, "<br>");
+        document.write("현재 일: " + nowDate, "<br>");
+        document.write("현재 요일: " + yoil + "요일", "<br>");
+        document.write("현재 시간: " + nowSi + "시", "<br>");
+        document.write("현재 분: " + nowBun + "분", "<br>");
+        document.write("현재 초: " + nowCho + "초", "<br>");
+
+    </script>
+</head>
+
+<body>
+    <h1>
+        <span id="year">0000</span>년
+        <span id="month">00</span>월
+        <span id="date">0</span>일
+        <span id="nday">0</span>요일
+        <span id="hour">00</span>시
+        <span id="minute">00</span>분
+        <span id="second">00</span>초
+    </h1>
+
+    <script>
+        document.write(nowYear + "년 " + nowMonth + "월 " + nowDate + "일 " + yoil + "요일 " + nowSi + "시 " + nowBun + "분 " + nowCho + "초");
+
+        document.write(`${nowYear}년 ${nowMonth}월 ${nowDate}일`);
+
+
+        document.querySelector('#year').innerHTML = nowYear;
+        document.querySelector('#month').innerHTML = nowMonth;
+        document.querySelector('#date').innerHTML = nowDate;
+        document.querySelector('#nday').innerHTML = yoil;
+        document.querySelector('#hour').innerHTML = nowSi;
+        document.querySelector('#minute').innerHTML = nowBun;
+        document.querySelector('#second').innerHTML = nowCho;
+    </script>
+</body>
+
+</html>

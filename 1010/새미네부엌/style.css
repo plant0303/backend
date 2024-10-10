@@ -1,0 +1,144 @@
+*{margin: 0; padding: 0; list-style: none; text-decoration: none; color: #333;}
+html{
+    font-size: 100%;
+}
+
+#wrap{
+    width: 1920px;
+    margin: 0 auto;
+    
+}
+#section02{
+    width: calc(100% - 14rem);
+    padding: 6.25rem;
+}
+#section02 .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+#section02 .title h3{
+    font-size: 3.75rem;
+    font-weight: bold;
+}
+#section02 .title span a{
+    display: inline-flex;
+    font-size: 1.125rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3.5rem;
+    color: #333;
+}
+#section02 .tabMenu{
+    padding-bottom: 20px;
+}
+#section02 .tabMenu ul{
+    display: flex;
+}
+
+#section02 .tabMenu li{
+    display: flex;
+    align-items: center
+}
+#section02 .tabMenu li a{
+    position: relative;
+    color: #929292;
+    font-size: 1.5rem;
+}
+#section02 .tabMenu li a.on{
+    color: #333;
+}
+#section02 .tabMenu li::after{
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 1rem;
+    border-radius: 100%;
+    background-color: #929292;
+}
+#section02 .tabMenu li:last-child:after{
+    content: none;
+}
+#section02 .slide{
+    position: relative;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    overflow: hidden;
+}
+#section02 .slide > ul{
+    display: flex;
+    border-top: 1px solid #e5e5e5;
+}
+#section02 .slide > ul > li{
+    padding: 20px 20px 0;
+    box-sizing: border-box;
+    border-right: 1px solid #e5e5e5;
+}
+
+#section02 .slide li a .frame img{
+    width: 393px;
+    border-radius: 20px;
+}
+#section02 .slide li a .text{
+    padding: 20px 0 48px;
+}
+#section02 .slide li a .text span.ctg{
+    padding: 6px 0.625rem;
+    border-radius: 16px;
+    color: #fff;
+}
+#section02 .slide li a .text span.solution{
+    background-color: #fb9622;
+}
+#section02 .slide li a .text span.recipe{
+    background-color: #333;
+}
+#section02 .slide li a .text h4{
+    font-size: 1.625rem;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    padding: 16px 0;
+    overflow: hidden;
+}
+#section02 .slide li a .text p{
+    font-size: 1.125rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#section02 .slide li .tag ul{
+    display: flex;
+}
+#section02 .slide li div.tag li{
+    position: relative;
+    padding: 0.625rem 16px;
+    margin-bottom: 5px;
+    margin-right: 0.625rem;
+    border-radius: 21px;
+    
+}
+#section02 .slide li div.hashTag li{
+    border: 1px solid #d4d4d4;
+    color: #666;
+
+}
+#section02 .slide li div.time li{
+    background-color: #f3f3f3;
+
+}
+#section02 .slide li div.time ul li span{
+    margin-right: 0.625rem;
+}
+#section02 .slide li div.time ul li span::after{
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 1px;
+    height: 1rem;
+    top: 50%;
+    margin-top: -0.5rem;
+    margin-left: 0.525rem;
+    background-color: #b8b8b8;
+}
