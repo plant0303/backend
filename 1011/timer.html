@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        <span id="year">0000</span>년
+        <span id="month">00</span>월
+        <span id="date">00</span>일
+        <span id="nday">0</span>요일
+        <span id="hour">00</span>시
+        <span id="minute">00</span>분
+        <span id="second">00</span>초
+    </h1>
+    <script>
+        function autoTime() {
+            var today = new Date();
+
+            var y = today.getFullYear();
+            var m = today.getMonth() + 1;
+            var d = today.getDate();
+            var n = today.getDay();
+            var yoil;
+
+            switch (n) {
+                case 0: yoil = "일"; break;
+                case 1: yoil = "월"; break;
+                case 2: yoil = "화"; break;
+                case 3: yoil = "수"; break;
+                case 4: yoil = "목"; break;
+                case 5: yoil = "금"; break;
+                case 6: yoil = "토"; break;
+                default: yoil = "??"; break;
+            }
+            var h = today.getHours();
+            var ml = today.getMinutes();
+            var s = today.getSeconds();
+
+            document.getElementById('year').innerHTML = y;
+            document.getElementById('month').innerHTML = m;
+            document.getElementById('date').innerHTML = d;
+            document.getElementById('nday').innerHTML = yoil;
+            document.getElementById('hour').innerHTML = h;
+            document.getElementById('minute').innerHTML = ml;
+            document.getElementById('second').innerHTML = s;
+        }
+        setInterval(autoTime, 1000);
+    </script>
+</body>
+
+</html>

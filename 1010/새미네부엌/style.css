@@ -17,6 +17,7 @@ html{
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    padding-bottom: 60px;
 }
 #section02 .title h3{
     font-size: 3.75rem;
@@ -31,10 +32,14 @@ html{
     color: #333;
 }
 #section02 .tabMenu{
+    position: relative;
     padding-bottom: 20px;
 }
 #section02 .tabMenu ul{
+    position: absolute;
     display: flex;
+    padding-top: 20px;
+    bottom: 0;
 }
 
 #section02 .tabMenu li{
@@ -49,6 +54,18 @@ html{
 #section02 .tabMenu li a.on{
     color: #333;
 }
+#section02 .tabMenu li a.on::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url(./img/ic_star_pink.png) no-repeat;
+    background-size: cover;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 100%;
+}
 #section02 .tabMenu li::after{
     content: '';
     display: inline-block;
@@ -62,6 +79,7 @@ html{
     content: none;
 }
 #section02 .slide{
+    padding-top: 20px;
     position: relative;
     width: calc(100% + 40px);
     margin-left: -20px;
@@ -77,9 +95,18 @@ html{
     border-right: 1px solid #e5e5e5;
 }
 
+#section02 .slide li a .frame{
+    width: 393px;
+    height: 393px;
+    border-radius: 20px;
+    overflow: hidden;
+}
 #section02 .slide li a .frame img{
     width: 393px;
-    border-radius: 20px;
+    transition: all 0.2s;
+}
+#section02 .slide li a .frame img:hover{
+    transform: scale(1.2);
 }
 #section02 .slide li a .text{
     padding: 20px 0 48px;

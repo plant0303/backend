@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table{
+      border-collapse: collapse;
+    }
+    td{
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var t = "<table border=1>";
+
+    for(var i = 2; i <= 9; i++){
+      t += "<tr>";
+      for(var j = 1; j <= 9; j++){
+        t += "<td>" + i + "*" + j + "=" + i * j + "</td>";
+      }
+      t += "</tr>";
+    }
+    t += "</table>";
+    document.write(t);
+  </script>
+</body>
+</html>
