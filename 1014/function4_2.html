@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFnc(name, area){
+            var intro = document.querySelector("#introduce");
+            intro.innerHTML = ("ㅎㅇ" + name + "임" + "<br>" + " 사는곳 " + area);            
+        }
+    </script>
+</head>
+<body>
+    <button onclick="myFnc('홍당무', '서울')">버1</button>
+    <button onclick="myFnc('두기', '부산')">버2</button>
+    <p id="introduce">
+        
+    </p>
+</body>
+</html>

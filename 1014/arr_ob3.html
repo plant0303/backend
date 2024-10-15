@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var greenArr = ["교대", "방배", "강남"];
+        var yellowArr = ["미금", "정자", "수서"];
+
+        greenArr.splice(2, 1, "서초", "역삼");
+        console.log(greenArr);
+
+        var data1 = yellowArr.pop(); // 수서, 마지막 데이터를 꺼낸다
+        var data2 = yellowArr.shift(); //미금
+        console.log(yellowArr); //yellowArr는 정자만 남음
+
+        yellowArr.push(data2); //맨뒤에 정자를 넣음
+        console.log(yellowArr); //정자 미금 출력
+        
+        yellowArr.unshift(data1); //맨 앞에 수서를 넣음
+        console.log(yellowArr); // 수서 정자 미금 출력
+    </script>
+</body>
+</html>

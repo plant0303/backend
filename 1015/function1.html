@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="galleryZone">
+        <p><img src="images/pic_1.jpg" id="photo" alt=""></p>
+        <p class="buttons">
+            <button onclick="gallery(0)">prev</button>
+            <button onclick="gallery(1)">next</button>
+        </p>
+    </div>
+    <script>
+        var num = 1;
+        function gallery(direct) {
+            if (direct) {
+                if (num == 8) return;
+                num++;
+            } else {
+                if (num == 0) return;
+                num--;
+            }
+            console.log(num);
+            var imgTag = document.getElementById('photo');
+        
+            imgTag.setAttribute('src', "images/pic_" + num + ".jpg");
+        }
+    </script>
+</body>
+
+</html>

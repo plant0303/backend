@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 학생 3명의 국영수 합계와 평균
+        var scores = [
+            [90, 80, 70],
+            [85, 95, 88],
+            [78, 92, 85]
+        ];
+        
+        var ksum = 0;
+        var esum = 0;
+        var msum = 0;
+
+        for(var i = 0; i < scores.length; i++){
+            ksum = ksum + scores[i][0];
+            esum = esum + scores[i][0];
+            msum = msum + scores[i][2];
+        }
+
+        // 평균 계산
+        var kavg = ksum / scores.length;
+        var eavg = esum / scores.length;
+        var mavg = msum / scores.length;
+
+        document.write("국어 합계: " + ksum + " 국어 평균: " + kavg + "<br>");
+        document.write("영어 합계: " + esum + " 국어 평균: " + eavg + "<br>");
+        document.write("수학 합계: " + msum + " 국어 평균: " + mavg + "<br>");
+    </script>
+</body>
+</html>
