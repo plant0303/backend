@@ -1,0 +1,128 @@
+*{margin: 0; padding: 0; list-style: none; text-decoration: none; color: #333; box-sizing: border-box;}
+#wrap{
+    position: relative;
+    width: 1200px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+}
+.tabMenu > ul{
+    display: flex;
+}
+
+.tabMenu > ul li a{
+    display: block;
+    padding: 10px 20px;
+    background-color: #ddd;
+    font-size: 15px;
+    font-weight: bold;
+}
+.tabMenu > ul li a.active{
+    background-color: #5c7596;
+    color: #fff;
+}
+.tabContent{
+    width: 500px;
+    border: 1px solid #afb9c7;
+    padding: 30px 20px;
+}
+.tabContent li{
+    width: 480px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.tabContent .tabcont:first-child{
+    display: block;
+}
+.tabContent .tabcont{
+    display: none;
+}
+.tabContent .tabcont li{
+    padding-bottom: 10px;
+}
+
+
+.slideWrap{
+    position: relative;
+    margin-top: 50px;
+}
+.slide{
+    position: relative;
+    width: 396px;
+    height: 194px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.slide ul{
+    width: 2376px;
+    display: flex;
+}
+.slide li a img{
+    width: 396px;
+}
+.swiper{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 20px;
+    bottom: 0;
+    background-color: #333333cc;
+    color: #fff;
+    text-align: center;
+    
+}
+.swiper_fraction{
+    color: #fff;
+    line-height: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.swiper span{
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    line-height: 10px;
+    height: 20px;
+}
+.swiper_btn{
+    display: inline-block;
+}
+.swiper_btn button{
+    border: 0 none;
+    border-radius: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+}
+.icon{
+    display: inline-block;
+}
+.prev::before{
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(./images/prev.png);
+    background-size: cover;
+}
+.play::before{
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(./images/play.png);
+    background-size: cover;
+}
+.next::before{
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(./images/next.png);
+    background-size: cover;
+}

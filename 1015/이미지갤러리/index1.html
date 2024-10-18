@@ -27,19 +27,18 @@
     <script>
         var prev = document.querySelector('#prev');
         var next = document.querySelector('#next');
+        var gallery = document.getElementById('gallery');
 
         var num = 1;
         function nextGallery(){
             num++;
             if(num > 7) num = 1;
-            var gallery = document.getElementById('gallery');
             gallery.setAttribute('src', 'images/img' + num + '.jpg');
         }
 
         function prevGallery(){
-            num--
+            num--;
             if(num < 1) num = 7;
-            var gallery = document.getElementById('gallery');
             gallery.setAttribute('src', 'images/img' + num + '.jpg');
         }
     </script>

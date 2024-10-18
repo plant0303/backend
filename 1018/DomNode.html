@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>dom공부</h1>
+        <a href="#" onclick="addP(); this.onclick=''">더보기</a>
+        <!--  this.onclick=''을 쓰면 한번만 실행하게 만들어-->
+        <div id="info">
+            
+        </div>
+    </div>
+    <script>
+        function addP(){
+            var newP = document.createElement("p"); // createElement 태그추가
+            var txtNode = document.createTextNode("DOM은 document ...몰라"); //createTextNode 텍스트 추가
+            newP.appendChild(txtNode); // p태그 안에 텍스트 넣기
+            document.getElementById("info").appendChild(newP); //info 태그 안에 만든거 다 넣기
+            
+        }
+    </script>
+</body>
+</html>
