@@ -1,0 +1,21 @@
+*{margin: 0; padding: 0; list-style: none; text-decoration: none;}
+a{color: #333;}
+@media screen and (max-width:850px) {
+    #wrap{position: relative; width: 850px; margin: 0 auto;}
+    header{display: flex; justify-content: space-between; align-items: center;}
+    
+    .mobile_nav{position: absolute; right: 0; text-align: center;}
+    #facebook a{}
+    .social{position: relative; left: 30px;}
+    .social ul{display: flex;}
+    #facebook a::before{content: ''; display: inline-block; width: 25px; height: 25px; background: url(./images/social_icon1.gif) no-repeat;}
+    .main img{width: 100%;}
+    #blog a::before{content: ''; display: inline-block; width: 25px; height: 25px; background: url(./images/social_icon2.gif) no-repeat;}
+    .main img{width: 100%;}
+    #kakao a::before{content: ''; display: inline-block; width: 25px; height: 25px; background: url(./images/social_icon3.gif) no-repeat;}
+    .main img{width: 100%;}
+
+    .mobileTab{position: relative; right: 50px; cursor: pointer;}
+
+    .mobile_nav{width: 300px; height: 100%; position: absolute; right: 0; z-index: 5;}
+}
