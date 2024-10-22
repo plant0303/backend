@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; list-style: none; text-decoration: none;}
+        ul li{float: left; margin: 20px 40px 0 0; padding: 10px 9px 4px 0;}
+        em{display: none;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#" class="go">
+            <span>손이가요 새우깡1</span>
+            <em>새우깡 이야기1</em>
+        </a></li>
+        <li><a href="#" class="go">
+            <span>손이가요 새우깡2</span>
+            <em>새우깡 이야기2</em>
+        </a></li>
+        <li><a href="#" class="go">
+            <span>손이가요 새우깡3</span>
+            <em>새우깡 이야기3</em>
+        </a></li>
+    </ul>
+    <script>
+        const gos = document.querySelectorAll('.go');
+        
+        gos.forEach(function(li){
+            const span = li.querySelector('span');
+            const em = li.querySelector('em');
+
+            span.addEventListener('mouseover', function() {
+                span.style.display = "none";
+                em.style.display = "block";
+            });
+
+            span.addEventListener('mouseout', function() {
+                span.style.display = "block";
+                em.style.display = "none";
+            });
+        });
+    </script>
+</body>
+</html>

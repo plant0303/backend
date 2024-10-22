@@ -1,21 +1,25 @@
 *{margin: 0; padding: 0; list-style: none; text-decoration: none;}
 a{color: #333;}
 @media screen and (max-width:850px) {
-    #wrap{position: relative; width: 850px; margin: 0 auto;}
-    header{display: flex; justify-content: space-between; align-items: center;}
+    #wrap{position: relative; max-width: 850px; overflow: hidden; margin: 0 auto;}
+    header{position: relative; display: flex; justify-content: space-between; align-items: center;}
     
     .mobile_nav{position: absolute; right: 0; text-align: center;}
     #facebook a{}
     .social{position: relative; left: 30px;}
     .social ul{display: flex;}
     #facebook a::before{content: ''; display: inline-block; width: 25px; height: 25px; background: url(./images/social_icon1.gif) no-repeat;}
-    .main img{width: 100%;}
     #blog a::before{content: ''; display: inline-block; width: 25px; height: 25px; background: url(./images/social_icon2.gif) no-repeat;}
     .main img{width: 100%;}
     #kakao a::before{content: ''; display: inline-block; width: 25px; height: 25px; background: url(./images/social_icon3.gif) no-repeat;}
-    .main img{width: 100%;}
-
-    .mobileTab{position: relative; right: 50px; cursor: pointer;}
-
-    .mobile_nav{width: 300px; height: 100%; position: absolute; right: 0; z-index: 5;}
+    
+    .mobileTab{position: relative; right: 50px; cursor: pointer; z-index: 9;}
+    
+    .mobile_nav{ position: absolute; right: -300px; text-align: center; width: 300px; height: 100vh; top: 0; background-color: #fff; color: #333; z-index: 999; transition: 0.3s;}
+    .mobile_nav ul li {padding: 10px 0;}
+    .mobile_nav ul li a{position: relative; text-align: center;}
+    .nav_background{position: absolute; top: 0; width: 100%; height: 100vh; background-color: #00000085; z-index: 998; display: none;}
+    
+    .main img{position: relative;}
+    
 }
