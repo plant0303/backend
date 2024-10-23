@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hightlight{background-color: yellow;}
+        .active{color: red;}
+    </style>
+</head>
+<body>
+    <!-- eventClass 연습 -->
+    <div id="myDiv">Hover over me!</div>
+    <button id="myButton">Toggle Class</button>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $('#myDiv').mouseenter(function(){
+                $(this).addClass('hightlight')
+            });
+            $('#myDiv').mouseleave(function(){
+                $(this).removeClass('hightlight')
+            });
+            // $("#myButton").click(function(){
+            //     $("#myDiv").toggleClass("active");
+            // });
+
+            $("#myButton").click(function(){
+                if($("#myDiv").hasClass("active")){
+                    alert("클래스있음");
+                    $("#myDiv").removeClass("active");
+                } else{
+                    alert("클래스없음");
+                    $("#myDiv").addClass("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
