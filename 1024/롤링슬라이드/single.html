@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        header {
+            width: 1200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: #ccc;
+            
+        }
+        
+        #img_slide {
+            position: relative;
+            width: 1200px;
+            height: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        #img_slide ul {
+            width: 4800px;
+            height: 300px;
+        }
+
+        #img_slide ul li {
+            width: 1200px;
+            float: left;
+        }
+
+        .btn .prev {
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn .next {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <div id="img_slide">
+        <ul id="banner">
+            <li><a href="#"><img src="./images/slide1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./images/slide2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./images/slide3.jpg" alt=""></a></li>
+        </ul>
+        <div class="btn">
+            <a href="#" class="prev"><img src="images/prev_btn.png" alt=""></a>
+            <a href="#" class="next"><img src="images/next_btn.png" alt=""></a>
+        </div>
+    </div>
+
+    <script>
+        var list = document.querySelector("#banner");
+        var ListLi = document.querySelectorAll("#banner li");
+        var prev = document.querySelector(".prev");
+        var next = document.querySelector(".next");
+        var li_width = document.querySelector('#banner li').offsetWidth; //가로넓이
+
+        const totalSlides = ListLi.length;
+        let num = 0;
+
+        var copyobj = ListLi[0].cloneNode(true);
+        list.append(copyobj);
+
+        next.addEventListener("click", function(){
+            num = (num + 1) % totalSlides;
+            transition();
+        })
+
+        prev.addEventListener("click", function () {
+
+            num = (num - 1 + totalSlides) % totalSlides;
+            transition();
+
+        })
+        // 아니이게왜됨
+        function transition(){
+            list.style.transition = "margin-left 0.5s";
+            list.style.marginLeft = `${-li_width * num}px`;
+        }
+    </script>
+</body>
+
+</html>

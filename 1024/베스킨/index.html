@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0; color: #fff;}
+        body{background-color: #333;}
+        #wrap{margin: 50px auto; width: 395px; height: 160px;}
+        dt{width: 25px; height: 160px; float: left; cursor: pointer;}
+        dt span{width: 25px; height: 160px; float: left; text-indent: -9999px; background: url(./blue01.png);}
+        dt span.selected{background: url(./pink01.png);}
+        dt span.over{background: url(./orange01.png);}
+        dd{width: 276px; height: 160px; float: left; overflow: hidden; transition: width 0.3s;}
+        dd img{ height: 160px;}
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <dl>
+            <dt><span class="selected">section1</span></dt>
+            <dd>
+                <img src="menuimg01.jpg" alt="">
+            </dd>
+            <dt><span class="">section2</span></dt>
+            <dd>
+                <img src="menuimg02.jpg" alt="">
+            </dd>
+            <dt><span class="">section3</span></dt>
+            <dd>
+                <img src="menuimg03.jpg" alt="">
+            </dd>
+        </dl>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $('dd:not(:first)').css('width', '0px');
+        $('dt:first span').addClass('selected');
+        
+        $('dt').click(function(){
+            $('dd').css('width', '0');
+            $('dt').next('dd').css('width', '0');
+
+            $('dt span').removeClass('selected');
+            $(this).find('span').addClass('selected');
+
+            $(this).next('dd').css('width', '276px');
+        });
+
+        $('dt').hover(function(){
+            $(this).find('span').addClass('over');
+        });
+        $('dt').mouseleave(function(){
+            $(this).find('span').removeClass('over');
+        });
+    </script>
+</body>
+</html>

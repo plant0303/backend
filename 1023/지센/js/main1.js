@@ -11,6 +11,7 @@ $(function(){
                 $('.transparency').removeClass('active');
             }
         }
+        
         if(w > 850){
             $('.sub').css('display', 'block');
         }

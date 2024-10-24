@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab {
+            display: flex;
+            list-style: none;
+        }
+
+        .tab li {
+            background-color: white;
+        }
+
+        .tab_list div {
+            background-color: #fff;
+        }
+
+        .tab_list div.on {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="tab">
+        <li>1번</li>
+        <li>2번</li>
+        <li>3번</li>
+    </ul>
+    <div class="tab_list">
+        <div>1번내용</div>
+        <div>2번내용</div>
+        <div>3번내용</div>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function () {
+            $('.tab li').click(function () {
+                var i = $(this).index();
+                ('.tab li').removeClass('on');
+                ('.tab li').eq(i).addClass('on');
+                ('.tab_list div').removeClass('on');
+                ('.tab_list div').eq(i).addClass('on');
+                
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0;list-style: none;text-decoration: none;}
+        #wrap{margin: 10px; height: 200px;  border: 1px solid #333;}
+        ul{display: flex; }
+        ul > li a{display: block; padding: 10px; background-color: #fff; height: 20px; line-height: 20px; color: #333;}
+        ul > li a.active{background-color: rgb(243, 165, 165);}
+        ul > li a:hover{background-color: rgb(201, 177, 177);}
+        .cont > div{display: none;}
+        .cont > div.on{display: block;}
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <ul>
+            <li><a href="#" class="active">공지사항</a></li>
+            <li><a href="#">갤러리</a></li>
+            <li><a href="#">정보마당</a></li>
+        </ul>
+        <div class="cont">
+            <div class="on">공지사항임</div>
+            <div class="">갤러리임</div>
+            <div class="">정보마당임</div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $('#wrap ul > li ').click(function(){
+                var i = $(this).index();
+
+                $('#wrap > ul > li > a').removeClass('active');
+                $('#wrap > ul > li > a').eq(i).addClass('active');
+
+                $('.cont > div').removeClass('on');
+                $('.cont > div').eq(i).addClass('on');
+            });
+        });
+    </script>
+</body>
+</html>
