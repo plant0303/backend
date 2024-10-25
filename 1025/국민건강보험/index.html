@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0; list-style: none;}
+        #wrap{width: 1200px; margin: 0 auto;}
+        .menu{width: 350px; position: relative; margin-top: 50px; background: #feeee6 url(download.png) no-repeat -10px -5px; padding: 20px 30px 30px;}
+        /* .slide{ overflow: hidden; border-radius: 10px;} */
+        .slide .slide_list{display: flex;}
+        .title{display: inline; float: left;}
+        .tit{margin-bottom: 10px; display: flex; align-items: center; justify-content: flex-end}
+        .tit p{font-weight: bold; font-size: 18px;}
+        .tit .controller{display: flex;}
+        
+        .tit .pager{ font-size: 10px;}
+
+        .tit .controller span{display: block; margin-left: 15px; width: 10px; height: 10px; }
+        .tit .controller span:nth-child(1){background: url(prev.png)no-repeat 0 0;background-size: cover;}
+        .tit .controller span:nth-child(2){background: url(stop.png)no-repeat 0 0;background-size: cover;}
+        .tit .controller span:nth-child(2){background: url(play.png)no-repeat 0 0;background-size: cover;}
+        .tit .controller span:nth-child(3){background: url(next.png)no-repeat 0 0;background-size: cover;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="menu">
+            <p class="title">홍보존</p>
+            <div class="tit">
+                <span class="pager">
+                    <em>4</em>
+                    /
+                    <em>4</em>
+                </span>
+                <div class="controller">
+                    <span id="prev"></span>
+                    <span class="play"></span>
+                    <span id="next"></span>
+                </div>
+            </div>
+            <div class="slide">
+                <ul class="slide_list">
+                    <li><a href="#"><img src="1.png" alt=""></a></li>
+                    <li><a href="#"><img src="2.png" alt=""></a></li>
+                    <li><a href="#"><img src="3.png" alt=""></a></li>
+                    <li><a href="#"><img src="4.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        var prev = $('#prev');
+        var next = $('#next');
+        var slide_ul = $('.slide_list');
+        var slide_li = $('slide_list > li')
+
+        var popCurrent = 0;
+        var popIndex = 0;
+        var total = $('.slide_li').length;
+
+        prev.click(function(){
+            popCurrent = popCurrent - 1;
+
+        });
+    </script>
+</body>
+</html>

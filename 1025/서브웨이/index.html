@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0; list-style: none;}
+        #wrap{width: 1920px; margin: 0 auto;}
+        #wrap > div{position: relative; margin-top: 50px; width: 1920px; overflow: hidden;}
+        .slide{display: flex; width: 5000px;}
+        .dot{position: absolute; bottom: 50px; right: 300px;}
+        .dot ul{display: flex;}
+        .dot ul li span{display: inline-block; margin-right: 10px; width: 15px; height: 15px; background-color: #ffffff; border-radius: 10px; cursor: pointer; transition: 0.3s;}
+        .dot ul li span.on{background-color: #f7c12e; width: 40px;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="">
+            <ul class="slide">
+                <li><a href="#"><img src="./slide1.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./slide2.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./slide3.jpg" alt=""></a></li>
+                <li><a href="#"><img src="./slide4.jpg" alt=""></a></li>
+            </ul>
+            <div class="dot">
+                <ul>
+                    <li><span class="on"></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+            // 슬라이드 변수
+            var slide = $('.slide');
+            var slide_list = $('.slide li');
+            // 도트변수
+            var dot_list = $('.dot > ul > li');
+            // 기본설정
+            var total = slide_list.length;
+
+            // clone
+            var clone = slide_list.eq(0).clone();
+            slide.append(clone);
+
+            var i = 0;
+            dot_list.click(function(){
+                i = $(this).index();
+                slide.stop().animate({'margin-left' : -i * 100 + "%"}, 600);
+                dot_list.find('span').removeClass();
+                $(this).find('span').addClass('on');
+            });
+
+            setInterval(autoPlay, 3000);
+            function autoPlay(){   
+                if(i == total){
+                    i = 0;
+                    slide.css('margin-left', 0);
+                }
+                i++;
+                slide.stop().animate({'margin-left' : -i * 100 + "%"}, 600);
+
+                dot_list.find('span').removeClass('on');
+                dot_list.eq(i).find('span').addClass('on');
+                
+            }
+        })
+    </script>
+</body>
+</html>

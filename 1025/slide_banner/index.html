@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{font-size: 12px;font-family: Dotum;color:#74767a;line-height: 120%;}
+        a{color:#74767a;text-decoration: none;}
+        ul{list-style: none;}
+        img{border:none;vertical-align: middle;}
+
+        #wrap{}
+        #brandVisual{position: relative; width: 100%;min-width: 1000px; height: 500px; background-color: #8c908c;}
+        #brandVisual ul li{position: absolute; width: 100%; height: 500px;}
+        #brandVisual ul li.visual_0{left: 0; background: url(./img/0.png) no-repeat 50% 0;}
+        #brandVisual ul li.visual_1{left: 100%; background: url(./img/1.png) no-repeat 50% 0;}
+        #brandVisual ul li.visual_2{left: 200%; background: url(./img/2.png) no-repeat 50% 0;}
+        #buttonList{position: absolute; top: 215px; left: 50%;}
+        #buttonList:after{content: ''; display: block; clear: both;}
+        #buttonList li{width: 14px; height: 15px; float: left; margin: 0 5px; background: url(./img/btnVisual.png) 0 -16px no-repeat;}
+        #buttonList li.on{background-position: 0 0;}
+        #buttonList li a{display: block; text-indent: -9999px;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="brandVisual">
+            <ul>
+                <li class="visual_0"><a href="#">배너이미지1</a></li>
+                <li class="visual_1"><a href="#">배너이미지2</a></li>
+                <li class="visual_2"><a href="#">배너이미지3</a></li>
+            </ul>
+        </div>
+        <ul id="buttonList">
+            <li class="on"><a href="#">배너1</a></li>
+            <li><a href="#">배너2</a></li>
+            <li><a href="#">배너3</a></li>
+        </ul>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+            var visual = $('#brandVisual > ul > li');  //큰사진
+            var button1 = $('#buttonList > li'); //pager 버튼
+            var current = 0; //현재
+            var id;
+            
+            button1.click(function(){
+                    var i = $(this).index();
+                    //alert(i);
+                    button1.removeClass('on');
+                    button1.eq(i).addClass('on');
+                    move(i); 
+            });
+
+            function move(i){
+                if(current == i) return; 
+                //현재 활성화된 button과 클릭한 버튼이 같은면 빠져 나간다.
+                var cu = visual.eq(current); //현재 보이는 큰 사진
+                var ne = visual.eq(i); //보여야 할 큰 사진
+                cu.css('left', '0').stop().animate({'left' : '-100%'}, 500);
+                ne.css('left', '100%').stop().animate({'left' : '0%'}, 500);
+                current = i;
+            }
+
+            function timer(){
+                id = setInterval(function(){
+                    var n = current + 1;
+                    if(n == 3){ n = 0 }
+                    button1.eq(n).trigger('click');
+                    //n번째 버튼을 3초마다 자동 클릭
+                }, 3000);
+            }
+            timer();
+        });
+
+        
+    </script>
+</body>
+</html>
