@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .s0{color: red;}
+        .s1{color: green;}
+        .s2{color: black;}
+        .s3{color: blue;}
+    </style>
+</head>
+<body>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+    <p>4</p>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        // for문
+        // $(function(){
+        //     for(var i = 0; i < 4; i++){
+        //         $('p').eq(i).addClass('s' + i);
+        //     }
+        // })
+
+        $(function(){
+            $('p').each(function(i){
+                $('p').eq(i).addClass('s' + i);
+            })
+        })
+    </script>
+</body>
+</html>
