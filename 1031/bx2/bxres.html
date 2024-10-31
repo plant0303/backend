@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/jquery.bxslider.css">
+    <style>
+        *{padding: 0; margin: 0; list-style: none;}
+        header{position: relative; width: 960px; height: 100px; margin: 0 auto; background-color: pink;}
+        section{height: 800px; margin: 0 auto; border: 1px solid red; box-sizing: border-box;}
+    </style>
+</head>
+<body>
+    <header>헤더</header>
+    <section>
+        <ul class="bx3">
+            <li><img src="img/images(1).jpg" title="메인사진1" alt=""></li>
+            <li><img src="img/images(2).jpg" title="메인사진2" alt=""></li>
+            <li><img src="img/images(3).jpg" title="메인사진3" alt=""></li>
+            <li><img src="img/images(4).jpg" title="메인사진4" alt=""></li>
+            <li><img src="img/images(5).jpg" title="메인사진5" alt=""></li>
+        </ul> 
+    </section>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./js/jquery.bxslider.js"></script>
+    <script>
+        $(function(){
+            $('.bx3').bxSlider({
+                auto: true,
+                minSlides: 1,
+                maxSlides: 4,
+                slideWidth: 350,
+                slideMargin: 10,
+                shrinkItems: true,
+            });
+        })
+    </script>
+</body>
+</html>

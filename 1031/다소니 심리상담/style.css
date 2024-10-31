@@ -1,0 +1,94 @@
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+*{margin: 0;padding: 0; text-decoration: none; list-style: none; font-family: nanumsquare;}
+header{ margin: 0 auto; text-align: center;}
+header .logo{position: relative; padding: 25px 0; background: url(./img/header_line.png) no-repeat center bottom; background-size: 100% 2px;}
+header nav{position: relative; border-bottom: 2px solid #c8c8c8; z-index: 999;}
+header nav:hover{border-bottom: 1px solid transparent;}
+header nav > ul{display: flex; width: 1000px; height: 50px; margin: 0 auto; justify-content: center;}
+header nav > ul > li{width: 20%; position: relative;}
+header nav > ul > li > a{position: relative; display: block; padding: 16px 24px; font-size: 1.000em; font-weight: bold;text-align: center; color: #333;}
+header nav > ul > li > ul{margin-top: 10px; position: relative; z-index: 55; height: 0px; overflow: hidden; transition: 0.2s;}
+header nav > ul > li > ul > li{padding: 10px 0;}
+header nav > ul > li > ul > li > a{color: #333; padding: 10px;}
+header nav > ul > li > ul > li > a:hover{ background: url(./img/sec5_tit2.png) no-repeat;}
+header nav ul li ul li a{font-weight: normal; }
+header .nav_bg{ position: absolute; width: 100%; height: 0px; background-color: #fff; transition: 0.2s; z-index: 998;}
+header .nav_bg.open{height: 300px; background: #fff url(./img/header_line.png) no-repeat center top; background-size: 100% 2px; }
+
+
+.slide{ width: 100vw; overflow: hidden;} 
+.slide img{width: 100vw;}
+#s1{
+	width: 100%;
+    height: 100%;
+	/* height:840px; */
+	position: relative;
+}
+.s1_tbox{
+    position: absolute;
+    width: 636px;
+    min-height: 296px;
+    background: url(./img/main_txt_box.png);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+/* 박스안에 큰글씨 를 70정도 내리고 숨김 */
+.s1_tbox h2{
+    font-size: 2.9em;
+    font-weight: 800;
+    margin: 0 0 25px;
+    word-break: keep-all;
+    opacity: 0;
+}
+/* 박스안에 작은글씨 를 70정도 내리고 숨김 */
+.s1_tbox p{
+	transform:translate(0, 70px);
+	opacity:0;
+	transition:all 1s 1s;
+}
+.s1_tbox h2.on{
+	transform:translate(0 ,0);
+	opacity:1;
+}.s1_tbox p.on{
+	transform:translate(0 ,0);
+	opacity:1;
+}
+
+.section .mainTitle{width: 1000px; margin: 0 auto; text-align: center;}
+.section .mainTitle > img{display: block; margin: 0 auto;}
+.section .mainTitle > h3{font-size: 2.906em; line-height: 1.25em; margin: 24px 0 26px;}
+.section .mainTitle > p{font-size: 1.000em; line-height: 1.5em; font-weight: 400; color: #666; margin: 0 0 45px;}
+
+.section1{padding: 100px 0 90px; background: url(./img/sec2_bg.jpg) no-repeat 0 0 / cover;}
+.section1 .ytube{width: 1000px; margin: 0 auto; text-align: center;}
+
+.section2{padding: 92px 0 92px; background: url(./img/sec1_bg.jpg) no-repeat 0 0 / cover;}
+.section2 .sangsim ul{display: flex; justify-content: center}
+.section2 .sangsim ul li ul{display: flex; flex-direction: column}
+
+.section2 .sangsim .sim-wing-left, .section2 .sangsim .sim-wing-right{margin-top: 30px;}
+.section2 .sangsim .sim-wing-left li{margin-bottom: 10px; text-align: center; background-color: #f8c268; width: 150px; padding: 11px 0;}
+.section2 .sangsim .sim-wing-left li a{ color: #fff;}
+.section2 .sangsim .sim-left{padding: 40px 0 0; width: 24.7%; background-color: #fff; padding: 30px 0; border: 3px solid #ff8f2b; border-radius: 35px 0 0 35px; text-align: center; margin-right: 10px;}
+.section2 .sangsim .sim-left img{display: block; margin: 20px auto ;}
+.section2 .sangsim .sim-left a{display: inline-block; width: 116px; height: 35px; line-height: 35px; border: 1px solid #f8c268; border-radius: 17px; background-color: #f8c268; color: #fff;}
+.section2 .sangsim .sim-wing-right li{margin-bottom: 10px; text-align: center; background-color: #11a990; width: 150px; padding: 11px 0;}
+.section2 .sangsim .sim-wing-right li a{ color: #fff;}
+
+.section2 .sangsim .sim-wing-right li{margin-bottom: 10px; text-align: center; background-color: #11a990; width: 150px; padding: 11px 0;}
+.section2 .sangsim .sim-wing-right li a{ color: #fff;}
+.section2 .sangsim .sim-right{padding: 40px 0 0; width: 24.7%; background-color: #fff; padding: 30px 0; border: 3px solid #11a990; border-radius: 0 35px 35px 0; text-align: center; }
+.section2 .sangsim .sim-right img{display: block; margin: 20px auto ;}
+.section2 .sangsim .sim-right a{display: inline-block; width: 116px; height: 35px; line-height: 35px; border: 1px solid #11a990; border-radius: 17px; background-color: #11a990; color: #fff;}
+
+.section3{padding: 100px 0 102px; background: url(./img/sec3_bg.jpg) no-repeat 0 0 / cover;}
+.section3 a{margin-bottom: 20px; display: inline-block; color: #fff; background-color: #65b07e; width: 116px; height: 35px; line-height: 35px; border-radius: 17px; border: 1px solid #65b07e;}
+.section3 a:hover{background-color: #fff; color: #333;}
+.section3 .sec3_list{width: 1000px; margin: 0 auto;}
+.section3 .sec3_list ul{display: flex; }
+.section3 .sec3_list ul{display: flex; }
+.section3 .sec3_list ul li{width: 31.7%; margin-right: 0.4%; padding: 40px 0 0; background: #fff; text-align: center;}
+.section3 .sec3_list ul li h3{font-size: 1.21em; margin: 0 0 22px;}
+.section3 .sec3_list ul li img{display: block; margin: 0 auto 16px;}
