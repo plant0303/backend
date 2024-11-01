@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div id="wrap">
+        <div class="slide">
+            <div class="bg bg1">
+                <div class="bg1_img active"></div>
+            </div>
+            <div class="bg bg2">
+                <div class="bg2_img"></div>
+            </div>
+            <div class="bg bg3">
+                <div class="bg3_img "></div>
+            </div>
+        </div>
+    </div>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $slide = $('.slide');
+        $slide.slick({
+            arrows: false,
+            dots: false,
+        });
+        $slide.on('afterChange', function(event, slick, currentSlide){
+            $('.slide .bg div').removeClass('active');
+            $('.slide .bg div').eq(currentSlide + 1).addClass('active');
+            console.log(currentSlide);
+        })
+    </script>
+</body>
+</html>

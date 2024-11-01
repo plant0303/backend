@@ -116,10 +116,9 @@
                         <a href="#" class="s2_apply">신청하기  > </a>
                     </li>
                 </ul>
-                
             </section>
             <section class="section section1">
-                <div class="mainTitle">
+                <div class="mainTitle sec2-2_title">
                     <img src="./img/sec2_tit.png" alt="">
                     <h3>심리상담</h3>
                     <p>
@@ -127,8 +126,24 @@
                         전문적인 상담을 진행하며 효과적인 치료를 이어갑니다.
                     </p>
                 </div>
-                <div class="ytube">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Y_n3hSD6qYg?si=C_tR2t2X0AYnma8O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <div class="sec2_table">
+                    <ul>
+                        <li>
+                            <p>관계테라피</p>
+                        </li>
+                        <li>
+                            <p>청춘상담</p>
+                        </li>
+                        <li>
+                            <p>아동심리상담</p>
+                        </li>
+                        <li>
+                            <p>청소년심리상담</p>
+                        </li>
+                        <li>
+                            <p>성인심리상담</p>
+                        </li>
+                    </ul>
                 </div>
             </section>
             <section class="section section2">
@@ -290,25 +305,90 @@
                 $('.slider li .text0').addClass('on');
                 $('.slider li .atext0').addClass('on');
             })
-        })
-        var bx = $('.slider').bxSlider({
-            auto: true,
-            pager: false,
-            controls: true,
-            made: 'fade',
-            pause: 5000,
-            onSlideBefore: function () {
-                var n = bx.getCurrentSlide();
-                $('.slider li').find('h2').removeClass('on');
-                $('.slider li').find('p').removeClass('on');
-                $('.slider li .text' + n).addClass('on');
-                $('.slider li .atext' + n).addClass('on');
+        
+            var bx = $('.slider').bxSlider({
+                auto: true,
+                pager: false,
+                controls: true,
+                made: 'fade',
+                pause: 5000,
+                onSlideBefore: function () {
+                    var n = bx.getCurrentSlide();
+                    $('.slider li').find('h2').removeClass('on');
+                    $('.slider li').find('p').removeClass('on');
+                    $('.slider li .text' + n).addClass('on');
+                    $('.slider li .atext' + n).addClass('on');
 
-            },
-            onSlideAfter: function () {
-            }
+                },
+                onSlideAfter: function () {
+                }
+            
+            });
 
-        })
+            // sec1
+            var a1 = Math.floor($('.s2_title img').offset().top);
+            var a2 = Math.floor($('.s2_title h2').offset().top);
+            var a3 = Math.floor($('.s2_title p').offset().top);
+            var a4 = Math.floor($('.s2_table li').offset().top);
+
+            // sec2
+            var sec2_img = $('.sec2-2_title img').offset().top;
+            var sec2_h3 = $('.sec2-2_title h3').offset().top;
+            var sec2_p = $('.sec2-2_title p').offset().top;
+            var sec2_li = $('.sec2_table ul li').offset().top;
+
+            $(window).scroll(function(){
+                var sct = $(this).scrollTop();
+                if(a1 < sct + 700){
+                    $('.s2_title img').addClass('slide');
+                }
+                if(a2 < sct + 700){
+                    $('.s2_title h2').addClass('slide');
+                }
+                if(a3 < sct + 700){
+                    $('.s2_title p').addClass('slide');
+                }
+                if(a4 < sct + 700){
+                    $('.s2_table li').eq(0).addClass('slide');
+                    setTimeout(function(){
+                        $('.s2_table li').eq(1).addClass('slide');
+                    }, 300);
+                    setTimeout(function(){
+                        $('.s2_table li').eq(2).addClass('slide');
+                    }, 600);
+                    setTimeout(function(){
+                        $('.s2_table li').eq(3).addClass('slide');
+                    }, 900);
+
+                }
+
+                if(sec2_img < sct + 700){
+                    $('.sec2-2_title img').addClass('slide');
+                }
+                if(sec2_h3 < sct + 700){
+                    $('.sec2-2_title h3').addClass('slide');
+                }
+                if(sec2_p < sct + 700){
+                    $('.sec2-2_title p').addClass('slide');
+                }
+                if(sec2_li < sct + 600){
+                    $('.sec2_table ul li').eq(0).addClass('slide');
+                    setTimeout(function(){
+                        $('.sec2_table ul li').eq(1).addClass('slide');
+                    }, 300);
+                    setTimeout(function(){
+                        $('.sec2_table ul li').eq(2).addClass('slide');
+                    }, 600);
+                    setTimeout(function(){
+                        $('.sec2_table ul li').eq(3).addClass('slide');
+                    }, 900);
+                    setTimeout(function(){
+                        $('.sec2_table ul li').eq(4).addClass('slide');
+                    }, 1200);
+                }
+            });
+
+        });
     </script>
 </body>
 </html>
