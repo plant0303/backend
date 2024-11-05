@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비율 유지 div</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: lightblue;
+            width: 100vw;
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+            /*IE, Edge*/
+            scrollbar-width: none;
+
+            /*Firefox*/
+            ::-webkit-scrollbar {
+                display: none;
+                /*Chrome, Safari, Opera*/
+                width: 0px;
+            }
+        }
+
+        .section{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 10% 1%;
+        }
+        .section1 {
+            /* background: url('your-image.jpg')no-repeat 0 0; */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section2 {
+            background-color: rgb(205, 225, 186);
+        }
+        .overlay-span1{
+            position: absolute;
+            width: 40%;
+            height: 70%;
+            background-color: aqua;
+            right: 0;
+            bottom: 0;
+        }
+        .overlay-span2{
+            position: absolute;
+            width: 40%;
+            height: 30%;
+            background-color: aqua;
+            left: 0;
+            top: 0;
+        }
+        .overlay-text{
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+            <section class="section section1">
+                <span class="overlay-span2"></span>
+            </section>
+            <section class="section section2">
+                <div class="bg1"></div>
+                <span class="overlay-span"></span>
+            </section>
+    </div>
+    <script>
+        function resizeDiv() {
+            const container = document.getElementById('container');
+
+            const overlaySpan = document.querySelector('.overlay-span');
+
+            const aspectRatio = 16 / 9; // 원하는 비율 설정 (예: 16:9)
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+
+            // 브라우저의 가로 세로 비율에 따라 크기 조정
+            if (window.innerWidth / window.innerHeight > aspectRatio) {
+                // 브라우저가 너무 넓은 경우
+                container.style.width = `${window.innerHeight * aspectRatio}px`;
+                container.style.height = `${window.innerHeight}px`;
+
+                const w = window.innerWidth;
+                if (window.innerHeight * aspectRatio <= w && w <= 1920) {
+                    container.style.width = '100vw';
+                }
+            } else {
+                // 브라우저가 너무 좁은 경우
+                container.style.width = `${window.innerWidth}px`;
+                container.style.height = `${window.innerWidth / aspectRatio}px`;
+            }
+
+            // 자식요소 조절
+            const scaleFactor = containerWidth / (containerHeight * aspectRatio);
+            overlaySpan.style.width = `${40 * scaleFactor}%`;
+            overlaySpan.style.height = `${70 * scaleFactor}%`;
+        }
+
+        // 초기 크기 설정
+        resizeDiv();
+
+        // 윈도우 크기가 변경될 때마다 크기 조정
+        window.addEventListener('resize', resizeDiv);
+
+        // 스크롤 한 단계씩
+        const wrap = document.querySelector('#container');
+        const sections = document.querySelectorAll('.section');
+        let page = 0;
+        const lastPage = sections.length - 1;
+
+        window.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if(e.deltaY > 0){
+                page++;
+            } else if(e.deltaY < 0){
+                page--;
+            }
+            if (page < 0) {
+                page = 0;
+            } else if (page > lastPage) {
+                page = lastPage;
+            }
+
+            sections[1].style.top = page * -100
+        })
+
+    </script>
+</body>
+
+</html>

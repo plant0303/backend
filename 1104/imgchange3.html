@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li a strong{display: block;}
+        ul li a em{display: none;}
+        ul li:hover a strong{display: none;}
+        ul li:hover a em{display: block;}
+        ul{width:600px;margin: 0 auto;height:50px;}
+        ul li{float:left;list-style: none;}
+    </style>
+</head>
+<body>
+    <ul class="gnb">
+        <li>
+            <a href="#">
+                <img src="images/menu01_out.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="images/menu02_out.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="images/menu03_out.png" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <img src="images/menu04_out.png" alt="">
+            </a>
+        </li>
+    </ul>
+    <script>
+        var links = document.querySelectorAll('.gnb li a');
+        links.forEach(function(i){
+            i.addEventListener('mouseenter', function(){
+                // 마우스올림
+                var img = i.querySelector('img');
+                img.src = img.src.replace('out', 'over')
+            });
+            i.addEventListener('mouseleave', function(){
+                // 마우스내림
+                var img = i.querySelector('img');
+                img.src = img.src.replace('over', 'out');
+            });
+        })
+    </script>
+</body>
+</html>

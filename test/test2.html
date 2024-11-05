@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .cont{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #ccc;
+        }
+        .bg1{position: relative; width: 100%; height: 100%; background: rebeccapurple;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="cont">
+            <section class="section section1">
+                <div class="bg1"></div>
+            </section>
+        </div>
+    </div>
+    <script>
+        // const w = window.innerWidth;
+        // if(w >= cont의 가로)
+
+        window.addEventListener('load', resizing);
+        window.addEventListener('resize', resizing);
+        function resizing(){
+            const cont = document.querySelector('.cont');
+    
+            const aspectRatio = 16/9;
+            const contW = cont.clientWidth;
+            const contH = cont.clientHeight;
+
+            if(contW / contH > aspectRatio){
+                cont.style.width = 'auto';
+                cont.style.height = '100%';
+            } else{
+                cont.style.width = '100%';
+                cont.style.height = 'auto';
+            }
+
+            const scaleFactor = contW / (contH * aspectRatio);
+
+            
+
+
+        }
+    </script>
+</body>
+</html>

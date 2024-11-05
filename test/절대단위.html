@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>16:9 비율 유지하기</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 중앙에 위치하도록 설정 */
+    background-color: #f0f0f0; /* 배경색 */
+}
+
+.ratio-container {
+    width: 100%; /* 전체 너비 사용 */
+    max-width: 800px; /* 최대 너비 제한 */
+    height: calc(100vw * 9 / 16); /* 가로에 맞춰 16:9 비율로 높이 설정 */
+    background-color: #007BFF; /* 배경색 */
+    position: relative; /* 자식 요소를 절대 위치로 설정할 수 있도록 함 */
+    overflow: hidden; /* 자식 요소가 영역을 넘어가지 않도록 함 */
+}
+
+.content {
+    position: absolute; /* 부모에 대한 절대 위치 설정 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex; /* 중앙 정렬을 위한 Flexbox */
+    justify-content: center;
+    align-items: center;
+    color: white; /* 텍스트 색상 */
+    font-size: 1.5rem; /* 텍스트 크기 */
+}
+
+    </style>
+</head>
+<body>
+    <div class="ratio-container">
+        <div class="content">
+            16:9 비율 유지하는 컨텐츠
+        </div>
+    </div>
+</body>
+</html>

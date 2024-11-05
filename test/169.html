@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>풀스크린 이미지</title>
+    <style>
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fullscreen-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fullscreen-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    max-width: none;
+    transform: translate(-50%, -50%);
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-image {
+    width: 20%; /* 기본 크기 설정 */
+    height: auto;
+}
+.overlay-text {
+    font-size: 500px;
+    color: white; /* 원하는 텍스트 색상 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    font-weight: bold;
+    margin-top: 10px; /* 이미지와 텍스트 사이의 간격 조정 */
+}
+.img1{position: absolute; left: 100px;}
+.overlay-span {
+    display: inline-block;
+    width: 80px;  /* 기본 너비 */
+    height: 110px; /* 기본 높이 */
+    background-color: aquamarine; /* 배경 색 */
+    margin-top: 10px; /* 다른 요소와 간격 조정 */
+}
+    </style>
+</head>
+<body>
+    <div class="fullscreen-container">
+        <img src="your-image.jpg" alt="풀스크린 이미지" class="fullscreen-image">
+        <div class="overlay-content">
+            <img src="your-overlay-image.png" alt="하위 요소 이미지" class="overlay-image img1">
+            <img src="your-overlay-image.png" alt="하위 요소 이미지" class="overlay-image img2">
+            <img src="your-overlay-image.png" alt="하위 요소 이미지" class="overlay-image img3">
+            <div class="overlay-text">여기에 텍스트를 입력하세요</div>
+            <span class="overlay-span"></span>
+        </div>
+    </div>
+    <script>
+window.addEventListener('resize', adjustImageSizes);
+
+function adjustImageSizes() {
+    const container = document.querySelector('.fullscreen-container');
+    const image = document.querySelector('.fullscreen-image');
+    const overlayImages = document.querySelectorAll('.overlay-image');
+    const overlayTexts = document.querySelectorAll('.overlay-text');
+    const overlaySpans = document.querySelectorAll('.overlay-span'); // span 요소 선택
+
+    const aspectRatio = 16 / 9;
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
+
+    // 풀스크린 이미지 크기 조정
+    if (containerWidth / containerHeight > aspectRatio) {
+        image.style.width = 'auto';
+        image.style.height = '100%';
+    } else {
+        image.style.width = '100%';
+        image.style.height = 'auto';
+    }
+
+    // 하위 요소 이미지, 폰트 사이즈 및 span 크기 조정
+    const scaleFactor = containerWidth / (containerHeight * aspectRatio);
+    
+    overlayImages.forEach(overlayImage => {
+        overlayImage.style.width = `${20 * scaleFactor}%`;
+        overlayImage.style.height = 'auto';
+    });
+    
+    overlayTexts.forEach(overlayText => {
+        const baseFontSize = 16; // 기본 폰트 사이즈
+        overlayText.style.fontSize = `${baseFontSize * scaleFactor}px`;
+    });
+
+    overlaySpans.forEach(overlaySpan => {
+        overlaySpan.style.width = `${80 * scaleFactor}px`; // 원래 너비에 비율 적용
+        overlaySpan.style.height = `${110 * scaleFactor}px`; // 원래 높이에 비율 적용
+    });
+}
+
+// 페이지 로드 시 한 번 실행하여 초기 비율 설정
+window.addEventListener('load', adjustImageSizes);
+
+    </script>
+</body>
+</html>
