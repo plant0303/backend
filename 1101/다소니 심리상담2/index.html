@@ -1,394 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./css/jquery.bxslider.css">
-</head>
-<body>
-    <div id="wrap">
-        <header>
-            <div class="logo">
-                <img src="./img/logo.png" alt="">
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#">ABOUT다소니</a>
-                        <ul>
-                            <li><a href="#">인사말</a></li>
-                            <li><a href="#">오시는글</a></li>
-                            <li><a href="#">마음산책</a></li>
-                            <li><a href="#">후기</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">상담진소개</a>
-                        <ul>
-                            <li><a href="#">대표</a></li>
-                            <li><a href="#">슈퍼바이저</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">심리상담</a>
-                        <ul>
-                            <li><a href="#">성인심리상담</a></li>
-                            <li><a href="#">청소년/아동심리상담</a></li>
-                            <li><a href="#">부부상담</a></li>
-                            <li><a href="#">가족상담</a></li>
-                            <li><a href="#">심리상담 예약신청</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">심리검사</a>
-                        <ul>
-                            <li><a href="#">다소니전문심리검사</a></li>
-                            <li><a href="#">종합심리평가</a></li>
-                            <li><a href="#">신경심리평가</a></li>
-                            <li><a href="#">단일검사</a></li>
-                            <li><a href="#">심리검사 예약신청</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">관계테라피</a>
-                        <ul>
-                            <li><a href="#">부부관계테라피</a></li>
-                            <li><a href="#">가족관계테라피</a></li>
-                            <li><a href="#">커플관계테라피</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="nav_bg"></div>
-        </header>
-        <div class="cont">
-            <div id="s1">
-                <ul class="slider">
-                    <li>
-                        <a href="#"><img src="img/newbg1.jpg"></a>
-                        <div class="s1_tbox">
-                            <p class="atext0">
-                                언택트시대 필수 과정
-                            </p>
-                            <h2 class="text0">비대면 상담<br>비대면 검사</h2>
-                            <p class="atext0">
-                            
-						        이제 당신의 공간에서 전문상담사를 만나보세요
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#"><img src="img/newbg2.jpg"></a>
-                        <div class="s1_tbox">
-                            <p class="atext1">
-                                가격부담 Down × 치료기대효과 Up
-                            </p>
-                            <h2 class="text1">다소니 관계테라피</h2>
-                            <p class="atext1">검사와 상담이 모두 필요한 여러분에게 딱 !</p>
-                        </div>
-                    </li>
+<html lang="ko">
+    <head>
+        <title>Dasoni</title>
+        <meta charset="UTF-8"/>
+     <link rel="stylesheet" type="text/css" href="./css/dasoni.css"/>
+	<link rel="stylesheet" href="css/jquery.bxslider.css" />
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script> 
+	<script src="js/jquery.bxslider.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/main.js"></script>
+	
+	</head>
+    <body>
+	<div class="wrap">      
+		<div class="header_out">
+		
+			<header>
+				<div class="header_line">
+					<div class="logo">
+						<a href="#"><img src="img/logo.png"/></a>
+					</div>
+				</div>
+				
+				<div class="gnb">
+					<ul class="menu">
+						<li>
+							<a href="#">ABOUT 다소니</a>
+							<ul>
+								<li><a href="#">인사말</a></li>
+								<li><a href="#">연혁</a></li>
+								<li><a href="#">오시는 길</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">심리상담</a>
+							<ul>
+								<li><a href="#">관계테라피</a></li>
+								<li><a href="#">성인심리상담</a></li>
+								<li><a href="#">청춘상담</a></li>
+								<li><a href="#">청소년심리상담</a></li>
+								<li><a href="#">아동심리상담</a></li>
+								<li><a href="#">심리상담 예약 신청</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">집단상담</a>
+							<ul>
+								<li><a href="#">소개</a></li>
+								<li><a href="#">상담일정</a></li>
+								<li><a href="#">집단상담 예약 신청</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">전문심리검사</a>
+							<ul>
+								<li><a href="#">안내</a></li>
+								<li><a href="#">성인심리검사</a></li>
+								<li><a href="#">청소년심리검사</a></li>
+								<li><a href="#">아동심리검사</a></li>
+								<li><a href="#">신경심리검사</a></li>
+								<li><a href="#">심리검사 예약 신청</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">소통</a>
+							<ul>
+								<li><a href="#">공지사항</a></li>
+								<li><a href="#">마음산책</a></li>
+								<li><a href="#">비밀고민상담</a></li>
+								<li><a href="#">후기</a></li>
+							</ul>
+						</li>
+					</ul>
+					<div class="shadow"></div>
+				</div>
+				
+			</header>
+		</div>
+		<!-- header_out -->
+		<section id="s1">
+			<ul class="slider">
+				<li>
+					<a href="#"><img src="img/main_visual.jpg"></a>
+					<div class="s1_tbox">
+						<h2 class="text0">다소니 심리상담센터 </h2>
+						<p class="atext0">
+						당신의 소중한 관계를, 표현하기 어려운 감정들을, 다양한 고민과 스트레스를,<br/>
+						따뜻한 상담과 전문적인 검사로 치유할 수 있게 도와드리겠습니다.	
+						</p>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="img/main_visual2.jpg"></a>
+					<div class="s1_tbox">
+						<h2 class="text1">관계테라피 </h2>
+						<p class="atext1">												
+						따뜻한 상담과 전문적인 검사로 치유할 수 있게 도와드리겠습니다.	
+						타인과의 관계 속에서 지치고 상처받은 마음을<br/>
+						관계테라피를 통해 보살필 수 있습니다.	
 
-                </ul>
-            </div>
-            <section id="s2">
-                <div class='s2_title'>
-                    <img src="img/sec1_tit.png"	class="s2_t_img" alt="/" />
-                    <h2>다소니</h2>
-                    <p>다소니의 전문적인 상담과 검사가 필요하시다면?</p>
-                </div>
-                <ul class="s2_table cf">
-                    <li>
-                        <p>심리상담예약신청</p>
-                        <a href="#" class="s2_apply">신청하기  > </a>
-                    </li>
-                    <li>
-                        <p>집단상담예약신청</p>
-                        <a href="#" class="s2_apply">신청하기  > </a>
-                    </li>
-                    <li>
-                        <p>심리검사예약신청</p>
-                        <a href="#" class="s2_apply">신청하기  > </a>
-                    </li>
-                    <li>
-                        <p>비밀고민상담</p>
-                        <a href="#" class="s2_apply">신청하기  > </a>
-                    </li>
-                </ul>
-            </section>
-            <section class="section section1">
-                <div class="mainTitle sec2-2_title">
-                    <img src="./img/sec2_tit.png" alt="">
-                    <h3>심리상담</h3>
-                    <p>
-                        인간관계에서의 문제, 심리적 문제로 어려움을 겪고 계시는 분들에게<br>
-                        전문적인 상담을 진행하며 효과적인 치료를 이어갑니다.
-                    </p>
-                </div>
-                <div class="sec2_table">
-                    <ul>
-                        <li>
-                            <p>관계테라피</p>
-                        </li>
-                        <li>
-                            <p>청춘상담</p>
-                        </li>
-                        <li>
-                            <p>아동심리상담</p>
-                        </li>
-                        <li>
-                            <p>청소년심리상담</p>
-                        </li>
-                        <li>
-                            <p>성인심리상담</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section class="section section2">
-                <div class="mainTitle">
-                    <img src="./img/sec1_tit.png" alt="">
-                    <h3>다소니</h3>
-                    <p>
-                        다소니전문 상담/검사가 필요하시다면?
-                    </p>
-                    <div class="sangsim">
-                        <ul>
-                            <li class="sim-wing-left">
-                                <ul>
-                                    <li><a href="#">성인</a></li>
-                                    <li><a href="#">아동/청소년</a></li>
-                                    <li><a href="#">부부/가족</a></li>
-                                </ul>
-                            </li>
-                            <li class="sim-left">
-                                <h3>심리상담예약신청</h3>
-                                <img src="./img/icon_mouse.png" alt="">
-                                <a href="#"><span>바로하기 ></span></a>
-                            </li>
-                            <li class="sim-right">
-                                <h3>심리검사예약신청</h3>
-                                <img src="./img/icon_pc.png" alt="">
-                                <a href="#"><span>신청하기 ></span></a>
-                            </li>
-                            <li class="sim-wing-right">
-                                <ul>
-                                    <li><a href="#">전문심리검사</a></li>
-                                    <li><a href="#">종합심리검사</a></li>
-                                    <li><a href="#">신경심리검사</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        
-                    </div>
-                </div>
-            </section>
-            <section class="section section3">
-                <div class="mainTitle">
-                    <img src="./img/sec3_tit.png" alt="">
-                    <h3>다소니 종합 심리평가</h3>
-                    <a href="#"><span>바로가기 ></span></a>
-                    <p>
-                        전문심리검사를 통해 문제의 원인을 명확히 규명하여<br>
-                        상담 목표를 설정하고 개입방향을 결정합니다.
-                    </p>
-                </div>
-                <div class="sec3_list">
-                    <ul>
-                        <li>
-                            <h3>성인심리검사</h3>
-                            <img src="./img/sec03_icon.png" alt="">
-                            <a href="#"><span>검사안내 ></span></a>
-                        </li>
-                        <li>
-                            <h3>청소년심리검사</h3>
-                            <img src="./img/sec03_icon2.png" alt="">
-                            <a href="#"><span>검사안내 ></span></a>
-                        </li>
-                        <li>
-                            <h3>아동심리검사</h3>
-                            <img src="./img/sec03_icon3.png" alt="">
-                            <a href="#"><span>검사안내 ></span></a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section class="section section4">
-                <div class="sec4 info">
-                    <div class="sec4Title infoT">
-                        <h3>공지사항</h3>
-                        <span><img src="./img/sec5_plus.png" alt=""></span>
-                    </div>
-                    <div class="sec4_cont infoC">
-                        <ul>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sec4 review">
-                    <div class="sec4Title reviewC">
-                        <h3>공지사항</h3>
-                        <span><img src="./img/sec5_plus.png" alt=""></span>
-                    </div>
-                    <div class="sec4_cont reviewC">
-                        <ul>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                            <li><a href="#">
-                                <span>2022 강동 어울마당에 다녀왔어요</span>
-                                <span>2022.03.28</span>
-                            </a></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-        </div>
+						</p>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="img/main_visual3.jpg"></a>
+					<div class="s1_tbox">
+						<h2 class="text2">청춘상담 </h2>
+						<p class="atext2">												
+						따뜻한 상담과 전문적인 검사로 치유할 수 있게 도와드리겠습니다.	
+						진로, 취업과 같은 현실적인 문제, 자존감,
+						정체성에 대한 문제, 내면의 문제처럼<br/>
+						혼자 해결하기 어려운 청춘들의 고민과
+						지친 마음을 들어드리고 도와드립니다.		
+
+						</p>
+					</div>
+				</li>
+			</ul>
+		</section>
+		<section id="s2">
+			<div class='s2_title'>
+				<img src="img/sec1_tit.png"	class="s2_t_img" alt="/" />
+				<h2>다소니</h2>
+				<p>다소니의 전문적인 상담과 검사가 필요하시다면?</p>
+			</div>
+			<ul class="s2_table cf">
+				<li>
+					<p>심리상담예약신청</p>
+					<a href="#" class="s2_apply">신청하기  &gt; </a>
+				</li>
+				<li>
+					<p>집단상담예약신청</p>
+					<a href="#" class="s2_apply">신청하기  &gt; </a>
+				</li>
+				<li>
+					<p>심리검사예약신청</p>
+					<a href="#" class="s2_apply">신청하기  &gt; </a>
+				</li>
+				<li>
+					<p>비밀고민상담</p>
+					<a href="#" class="s2_apply">신청하기  &gt; </a>
+				</li>
+			</ul>
+			
+		</section>
+		<section id="s3">
+			<div class="s3_title">
+				<img src="img/sec2_tit.png" class="s3_t_img" alt="/" />
+				<h2>심리상담</h2>
+				<p>인간관계에서의 문제, 심리적 문제로 어려움을 겪고 계시는 분들에게<br />
+					전문적인 상담을 진행하며 효과적인 치료를 이어갑니다.
+				</p>
+			</div>
+			<ul class="s3_table cf">
+				<li>
+					<a href="#">
+						<p>관계테라피</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p>청춘상담</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p>아동심리상담</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p>청소년심리상담</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p>성인심리상담</p>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<section id="s4">
+			<div class="s4_title">
+				<img src="img/sec3_tit.png" class="s4_t_img" alt="/" />
+				<h2>전문심리검사</h2>
+				<p>전문심리검사를 통해 문제의 원인을 명확히 규명하여<br />
+					상담 목표를 설정하고 개입방향을 결정합니다.
+				</p>
+			</div>
+			<ul class="s4_table cf">
+				<li>
+					<p>성인심리검사</p>
+					<a href="#" class="s4_apply s4_help">검사안내 &gt; </a>
+				</li>
+				<li>
+					<p>청소년심리검사</p>
+					<a href="#" class="s4_apply s4_help">검사안내 &gt; </a>
+				</li>
+				<li>
+					<p>아동심리검사</p>
+					<a href="#" class="s4_apply s4_help">검사안내 &gt; </a>
+				</li>
+				<li>
+					<p>신경심리평가</p>
+					<a href="#" class="s4_apply s4_help">검사안내 &gt; </a>
+				</li>
+
+			</ul>
+
+
+		</section>
+
+		<section id="s5">
+			<div class="s5_title">
+				<div class="s5_inner left">
+					<img src="img/sec4_tit.png" class="s5_t_img" alt="/" />
+					<h2>전문심리검사</h2>
+					<p>전문심리검사를 통해 문제의 원인을 명확히 규명하여<br />
+						상담 목표를 설정하고 개입방향을 결정합니다.
+					</p>
+					<a href="#" class="s2_apply s5_check">일정확인</a>
+				</div>
+			</div>
+
+		</section>
+		<section id="s6">
+			<div class="s6_content">
+				<div class="s6_noti left">
+					<a href="#" class="cf">
+						<h2>공지사항</h2>
+						<img src="img/sec5_plus.png" alt="">
+					</a>
+					<ul>
+						<li>
+							<a href="#">
+								<div class="s6_title">2020년 6월 한달, 심리검사 할인 깜짝 이벤트!!</div>
+								<div class="s6_date">2020.06.01</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="s6_title">지금 내게 필요한 심리상담센터/당신의 심리적 스트레스 해소방법은...</div>
+								<div class="s6_date">2020.01.30</div>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="s6_title">[네이버예약 티켓오픈] 개인,커플 심리검사/해석 네이버예약으로 ...</div>
+								<div class="s6_date">2019.11.14</div>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+				<div class="s6_review left">
+					<a href="#" class="cf">
+						<h2>상담후기</h2>
+						<img src="img/sec5_plus2.png" alt="">	
+					</a>
+					<ul>
+						<li>
+							<a href="#" class="cf">
+								<div class="s6_title">심리상담</div>
+								<div class="s6_date">2020.06.11</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="cf">
+								<div class="s6_title">심리상담</div>
+								<div class="s6_date">2020.04.23</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="cf">
+								<div class="s6_title">성인심리상담</div>
+								<div class="s6_date">2020.02.14</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="cf">
+								<div class="s6_title">청소년심리상담</div>
+								<div class="s6_date">2020.01.13</div>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="cf">
+								<div class="s6_title">심리상담</div>
+								<div class="s6_date">2020.01.03</div>
+							</a>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</section>
         <footer>
-            푸터푸터푸터
+            <div class="ft_container cf">
+                <a href="" class="ft_logo">
+                    <img src="img/f_logo.png" alt="">
+                </a>
+                <div class="ft_center">
+                    <p>다소니 심리상담센터  <span></span>  대표 : 김혜연</p>
+					<p>사업자등록번호 : 684-82-00196  <span></span>  통신판매업신고번호 : 제 2019-서울강동-1134호</p>
+					<p>본점 : (우 05356) 서울시 강동구 진황도로119, 4층 (길동)</p>
+					<p>TEL : 02-426-0982  <span></span>  팩스 : 02-426-0983  <span></span>  이메일 : </p>
+					<p>COPYRIGHT(C) 사회협동조합 공존 ALL RIGHTS RESERVERED</p>
+                </div>
+                <ul class="ft_sns cf">
+                    <li><a href="#"><img src="img/sns_icon.png" alt=""></a></li>
+                    <li><a href="#"><img src="img/sns_icon2.png" alt=""></a></li>
+                    <li><a href="#"><img src="img/sns_icon3.png" alt=""></a></li>
+                </ul>
+            </div>
         </footer>
-    </div>
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/jquery.bxslider.js"></script>
-    <script>
-        $(function () {
-            $('header nav').mouseover(function () {
-                $('header nav ul li ul').css({ 'height': '300px' });
-                $('header .nav_bg').addClass('open');
-            });
-            $('header nav').mouseout(function () {
-                $('header nav ul li ul').css('height', '0px');
-                $('header .nav_bg').removeClass('open');
-            });
-            setTimeout(function () {
-                $('.slider li .text0').addClass('on');
-                $('.slider li .atext0').addClass('on');
-            })
-        
-            var bx = $('.slider').bxSlider({
-                auto: true,
-                pager: false,
-                controls: true,
-                made: 'fade',
-                pause: 5000,
-                onSlideBefore: function () {
-                    var n = bx.getCurrentSlide();
-                    $('.slider li').find('h2').removeClass('on');
-                    $('.slider li').find('p').removeClass('on');
-                    $('.slider li .text' + n).addClass('on');
-                    $('.slider li .atext' + n).addClass('on');
+        <ul class="fix_box">
+            <li><a href="#" class="fix_talk"></a></li>
+            <li><a href="#" class="fix_phone"></a></li>
+            <li><a href="#" class="fix_clock"></a></li>
+        </ul>
+</div>	
 
-                },
-                onSlideAfter: function () {
-                }
-            
-            });
 
-            // sec1
-            var a1 = Math.floor($('.s2_title img').offset().top);
-            var a2 = Math.floor($('.s2_title h2').offset().top);
-            var a3 = Math.floor($('.s2_title p').offset().top);
-            var a4 = Math.floor($('.s2_table li').offset().top);
 
-            // sec2
-            var sec2_img = $('.sec2-2_title img').offset().top;
-            var sec2_h3 = $('.sec2-2_title h3').offset().top;
-            var sec2_p = $('.sec2-2_title p').offset().top;
-            var sec2_li = $('.sec2_table ul li').offset().top;
-
-            $(window).scroll(function(){
-                var sct = $(this).scrollTop();
-                if(a1 < sct + 700){
-                    $('.s2_title img').addClass('slide');
-                }
-                if(a2 < sct + 700){
-                    $('.s2_title h2').addClass('slide');
-                }
-                if(a3 < sct + 700){
-                    $('.s2_title p').addClass('slide');
-                }
-                if(a4 < sct + 700){
-                    $('.s2_table li').eq(0).addClass('slide');
-                    setTimeout(function(){
-                        $('.s2_table li').eq(1).addClass('slide');
-                    }, 300);
-                    setTimeout(function(){
-                        $('.s2_table li').eq(2).addClass('slide');
-                    }, 600);
-                    setTimeout(function(){
-                        $('.s2_table li').eq(3).addClass('slide');
-                    }, 900);
-
-                }
-
-                if(sec2_img < sct + 700){
-                    $('.sec2-2_title img').addClass('slide');
-                }
-                if(sec2_h3 < sct + 700){
-                    $('.sec2-2_title h3').addClass('slide');
-                }
-                if(sec2_p < sct + 700){
-                    $('.sec2-2_title p').addClass('slide');
-                }
-                if(sec2_li < sct + 600){
-                    $('.sec2_table ul li').eq(0).addClass('slide');
-                    setTimeout(function(){
-                        $('.sec2_table ul li').eq(1).addClass('slide');
-                    }, 300);
-                    setTimeout(function(){
-                        $('.sec2_table ul li').eq(2).addClass('slide');
-                    }, 600);
-                    setTimeout(function(){
-                        $('.sec2_table ul li').eq(3).addClass('slide');
-                    }, 900);
-                    setTimeout(function(){
-                        $('.sec2_table ul li').eq(4).addClass('slide');
-                    }, 1200);
-                }
-            });
-
-        });
-    </script>
-</body>
+    </body>
 </html>
+
+
+
+
+
+

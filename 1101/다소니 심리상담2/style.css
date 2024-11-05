@@ -224,3 +224,106 @@ header .nav_bg.open{height: 300px; background: #fff url(./img/header_line.png) n
 .section3 .sec3_list ul li{width: 31.7%; margin-right: 0.4%; padding: 40px 0 0; background: #fff; text-align: center;}
 .section3 .sec3_list ul li h3{font-size: 1.21em; margin: 0 0 22px;}
 .section3 .sec3_list ul li img{display: block; margin: 0 auto 16px;}
+
+/* s5 */
+#s5{
+	height:420px;
+	background: url(../img/sec4_bg.jpg);
+	background-size: cover;
+	box-sizing: border-box;
+}
+.s5_title{
+	width:1000px;
+	height:auto;
+	text-align: center;
+	margin: 0 auto;;
+}
+.s5_inner{
+	width:500px;
+	height:284px;
+	padding-top: 100px;
+}
+.s5_inner img{padding: 20px 0;}
+.s5_inner h2{
+	color:#333;
+	font-size:25px;
+	padding:20px 0;
+}
+.s5_check{
+	margin-top:50px; 
+	background:#333;
+}
+.s5_check:hover{
+	background:#fff;
+	color:#333;
+	border:1px solid #333;
+}
+.left{
+	visibility: hidden;
+}
+.left.slide1{
+	animation-name: slide1;
+	animation-duration: 1s;
+	visibility: visible;
+}
+@keyframes slide1{
+	0%{
+		opacity:0;
+		transform:translateX(-200px);
+	}
+	100%{
+		opacity:1;
+		transform:translateX(0%);
+	}
+}
+
+/* s6 */
+#s6{height:400px;}
+.s6_content{
+	width:1000px;
+	margin: 0 auto;
+}
+.s6_noti, .s6_review{
+	width:500px;
+	height:255px;
+	float:left;
+	margin-top:50px;
+	box-sizing:border-box;
+}
+
+.s6_review{
+	float: right;
+	padding-left: 30px;
+}
+.s6_content h2{	
+	font-size:21px;
+	float:left;
+	margin-bottom:25px;	
+	padding:10px;
+	margin-left:10px;
+}
+.s6_noti h2{
+	color:#42a052;
+	background: url(../img/sec5_tit.png) no-repeat;	
+}
+.s6_review h2{
+	color:#ff8f2b;
+	background: url(../img/sec5_tit2.png) no-repeat;	
+}
+.s6_noti img, .s6_review img{
+	float: right;
+	transition:all .4s;
+}
+.s6_noti a:hover img,
+ .s6_review a:hover img{
+	transform: rotate(180deg);
+ }
+ .s6_title, .s6_date{
+	font-size: 14px;
+	margin-bottom: 30px;
+ }
+ .s6_title:last-child, .s6_date:last-child{
+    margin-bottom: 0px;
+ }
+ .s6_title{color: #333; float: left; margin-left: 20px;}
+ .s6_date{color: #666; float: right;}
