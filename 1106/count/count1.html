@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="num">50000</h1>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        var number = $('#num').text();
+        $({precent : 0}).animate({precent : number}, {
+            dutation: 300,
+            progress : function(){
+                var now = this.precent;
+                $('#num').text(Math.ceil(now));
+            }
+        })
+    </script>
+</body>
+</html>

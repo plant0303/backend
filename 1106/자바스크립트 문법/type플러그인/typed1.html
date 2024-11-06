@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <span id="typed1"></span>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="typed.js"></script>
+    <script>
+$(function(){
+    var typed2 = new Typed('#typed1',{
+        strings : ['으아아아', '으어어어어', '우어어오오어어'],
+        typeSpeed:50,
+        startDelay: 1200,
+        backSpeed:50,
+        backDelay:500,
+        loop:true,
+    });
+
+});
+    </script>
+</body>
+</html>

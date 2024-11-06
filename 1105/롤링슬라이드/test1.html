@@ -48,7 +48,7 @@
             position: relative;
             margin: 10px auto;
             border: 1px solid blue;
-            /* overflow: hidden; */
+            overflow: hidden;
         }
     </style>
 </head>
@@ -85,29 +85,41 @@
         const total = bannerLi.length;
         let num = 0;
         // clone
-        for(let i = 0; i < bannerLi.length; i++){
-            var clone = bannerLi[i].cloneNode(true);
+        bannerLi.forEach((i) => {
+            var clone = i.cloneNode(true);
             banner.append(clone);
-        }        
+        })
 
         // 버튼
-        prev.addEventListener('click', prevFnc);
-        next.addEventListener('click', nextFnc);
+        next.addEventListener('click', nextEvent);
+        prev.addEventListener('click', prevEvent);
 
-        function prevFnc(e){
-            e.preventDefault();
-
-        }
-        function nextFnc(e){
-            e.preventDefault();
+        function nextEvent(){
             if(num == total){
                 num = 0;
+                banner.style.transition = 'none'
+                banner.style.marginLeft  = 0;
             }
-            banner.style.transition = 'margin-left 0.5s';
-            banner.style.marginLeft = -num * liW + "px";
+            setTimeout(function(){
+                num++;
+                banner.style.transition = 'margin-left 0.5s'
+                banner.style.marginLeft = -liW * num + "px";
+            }, 50)
         }
 
-        
+        function prevEvent(){
+            if(num == 0){
+                num = total;
+                banner.style.transition = 'none'
+                banner.style.marginLeft = '0px';
+            }
+            setTimeout(function(){
+                num--;
+                banner.style.transition = 'margin-left 0.5s'
+                banner.style.marginLeft = -liW * num + "px";
+            }, 50)
+        }
+
     </script>
 </body>
 

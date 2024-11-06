@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="count">
+        <li class="num" data-num="300">00</li>
+        <li class="num" data-num="200">00</li>
+        <li class="num" data-num="100">00</li>
+    </ul>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function () {
+            $('.count > li').each(function(i){
+
+                var t = $(this);
+                var number = t.attr('data-num');
+
+                $({ precent: 0 }).animate({ precent: number }, {
+                    duration: 3000,
+                    progress: function () {
+                        var now = this.precent;
+                        t.text(Math.ceil(now));
+                    }
+                })
+
+            });
+        })
+    </script>
+</body>
+
+</html>

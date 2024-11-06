@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <input id="typed1"></input>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="typed.js"></script>
+    <script>
+        var typed2 = new Typed('#typed1', {
+            string : ['우어어어어', '으어어어어어', '으아아아아아아악'],
+            typedSpeed: 50,
+            backSpeed: 50,
+            attr : 'placeholder',
+            bindInputFocusEvents: true,
+            loop: true,
+        });
+    </script>
+</body>
+</html>
