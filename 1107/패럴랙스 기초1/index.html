@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{height: 3300px;}
+        h1{font-size: 100%;}
+        .indicator{position: fixed; right: 10px; top: 10px;}
+        li{list-style: none; height: 60px; top: 40px; width: 60px; position: fixed;}
+        #item1{background: #000; left: 20px;}
+        #item2{background: #333; left: 100px;}
+        #item3{background: #ff358b; left: 180px;}
+        #item4{background: #01b0f0; left: 260px;}
+        #item5{background: #aeee00; left:1420px;}
+    </style>
+</head>
+<body>
+    <h1>스크롤에 따라 움직이는 상자</h1>
+    <p class="indicator">스크롤값<span id="value">0</span></p>
+    <ul>
+        <li id="item1"></li>
+        <li id="item2"></li>
+        <li id="item3"></li>
+        <li id="item4"></li>
+        <li id="item5"></li>
+    </ul>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+$(function(){
+    var top1 = $("#item1").offset().top;
+	var left1 = $("#item1").offset().left;
+	var left2 = $("#item2").offset().left;
+	var left3 = $("#item3").offset().left;
+	var left4 = $("#item4").offset().left;
+	var left5 = $("#item5").offset().left;
+	console.log(top1 ,left1, left2, left3, left4, left5);
+
+$(window).scroll(function(){
+    var sct =  $(this).scrollTop();
+    $('#value').text(sct);
+
+    $('#item1').css({'top':top1 + sct / 4 });
+    $('#item2').css({'top':top1 + sct / 5 , 
+        'left':left2 + sct / 8
+    });
+    $("#item3").css({'top':top1 + sct/6, 
+		'left': left3 + sct / 6 });
+    $("#item4").css({'top':top1 + sct/8,
+     'left': left4 + sct / 5 });
+    $("#item5").css({'left':left5 + sct/4 });
+
+});
+
+
+
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul,
+		li {
+			list-style: none;
+		}
+
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+
+		.cf:after {
+			content: '';
+			display: block;
+			clear: both;
+		}
+
+		#img_slide {
+			width: 800px;
+			height: 450px;
+			margin: 50px auto;
+			position: relative;
+
+		}
+
+		#img_slide .imgs {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+
+		#img_slide .imgs li {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 100%;
+			top: 0;
+		}
+
+		#img_slide .imgs li:first-child {
+			left: 0;
+		}
+
+		#img_slide .imgs li img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+
+
+		.pager {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: -30px;
+		}
+
+		.pager li {
+			float: left;
+			margin: 0 7px;
+		}
+
+		.pager li a {
+			display: block;
+			width: 15px;
+			height: 15px;
+			background-color: #ddd;
+			border-radius: 50%;
+		}
+
+		.pager li.on a {
+			background-color: #555;
+		}
+
+		#img_slide .btn {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			color: #999;
+			font-size: 80px;
+		}
+
+		#img_slide .btn.next {
+			right: -80px;
+		}
+
+		#img_slide .btn.prev {
+			left: -80px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="img_slide">
+		<ul class="imgs">
+			<li><img src="./images/photo1.JPG" alt="" /></li>
+			<li><img src="./images/photo2.JPG" alt="" /></li>
+			<li><img src="./images/photo3.JPG" alt="" /></li>
+			<li><img src="./images/photo4.JPG" alt="" /></li>
+			<li><img src="./images/photo5.JPG" alt="" /></li>
+		</ul>
+		<ol class="pager">
+			<li class="on"><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ol>
+		<p class="btn next">&gt;</p>
+		<p class="btn prev">&lt;</p>
+	</div>
+	<script>
+		$(function () {
+			// i : 나중 슬라이드
+			var i = 0;
+			// k : 현재 슬라이드
+			var k = 0;
+			var repeat;
+
+			// 
+			// 
+			// 
+			// 도트이동
+			$('.pager li').on('click', clickSlide);
+			timer();
+			function clickSlide() {
+				$('.pager li').off('click');
+				i = $(this).index();
+
+				if (i > k) {
+					$('.imgs li').eq(k).css('left', '0').animate({ 'left': '-100%' }, 600);
+					$('.imgs li').eq(i).css('left', '100%').animate({ 'left': '0' }, 600, function () {
+						// 슬라이드가 끝난 후에 동작
+						$('.pager li').on('click', clickSlide);
+					});
+				} else if (i < k) {
+					$('.imgs li').eq(k).css('left', '0').animate({ 'left': '100%' }, 600);
+					$('.imgs li').eq(i).css('left', '-100%').animate({ 'left': '0%' }, 600, function () {
+						// 슬라이드가 끝난 후에 동작
+						$('.pager li').on('click', clickSlide);
+					});
+				} else {
+					$('.pager li').on('click', clickSlide);
+				}
+				$('.pager li').removeClass('on').eq(i).addClass('on');
+				k = i;
+
+			}
+
+			// 
+			// 
+			// 
+			// 타이머
+			function timer() {
+				repeat = setInterval(function () {
+					i++;
+					if (i == 5) { i = 0; }
+					$('.imgs li').eq(i - 1).css('left', '0').animate({ 'left': '-100%' }, 600);
+					$('.imgs li').eq(i).css('left', '100%').animate({ 'left': '0' }, 600);
+					$('.pager li').removeClass('on').eq(i).addClass('on');
+				}, 3000);
+			}
+
+			// 
+			// 
+			// 
+			// 마우스 정지
+			$('#img_slide').mouseover(function () {
+				clearInterval(repeat);
+			});
+			$('#img_slide').mouseleave(function () {
+				timer();
+			});
+		
+			// 
+			// 
+			// 
+			// 마우스이동
+			$('.next').on('click', nextSlide);
+			$('.prev').on('click', prevSlide);
+
+			function nextSlide() {
+				$(".next").off("click"); // next버튼 기능 멈춤
+				$(document).off("keydown"); //키보드 사용 멈춤
+				clearInterval(repeat); //자동슬라이드 멈춤
+
+				i++;
+				if (i == 5) {
+					i = 0;
+				}
+				$('.imgs li').eq(i - 1).css('left', '0').animate({ 'left': '-100%' }, 600);
+				$('.imgs li').eq(i).css('left', '100%').animate({ 'left': '0' }, 600, function () {
+					$(".next").on("click", nextSlide);
+					$(document).on("keydown", pressKey);
+					timer();
+				});
+				$(".pager li").removeClass("on").eq(i).addClass("on");
+				k = i;
+
+			}
+			function prevSlide() {
+				$(".prev").off("click"); // next버튼 기능 멈춤
+				$(document).off("keydown"); //키보드 사용 멈춤
+				clearInterval(repeat); //자동슬라이드 멈춤
+
+				
+				i--;
+				$('.imgs li').eq(i).css('left', '-100%').animate({ 'left': '0' }, 600);
+				$('.imgs li').eq(i+1).css('left', '0').animate({ 'left': '100%' }, 600, function () {
+					$(".prev").on("click", prevSlide);
+					$(document).on("keydown", pressKey);
+					timer();
+				});
+				if(i == -1){ i = 4 }
+				$(".pager li").removeClass("on").eq(i).addClass("on");
+				k = i;
+			}
+		
+			// 
+			// 
+			// 
+			// 키보드 이동
+			$(document).on("keydown", pressKey);
+			function pressKey(e){
+				if(e.keyCode == 65 || e.keyCode == 37){
+					prevSlide();
+				} else if(e.keyCode == 68 || e.keyCode == 39){
+					nextSlide();
+				}
+			}
+		});
+
+	</script>
+
+
+</body>
+
+</html>
