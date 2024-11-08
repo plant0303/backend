@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+    endpoint
+    https://api.openweathermap.org/data/2.5/forecast?id=1835553&appid=ae2ef5de65e25388a36b43c17b0a6711&units=metric&units=metric
+
+    key
+    bd5b86ca25c98b482e2c4d5309da05a2
+
+    도시코드
+    수원 1835553
+    서울 1835848 
+
+    이미지 url
+    https://openweathermap.org/img/wn/10d@2x.png
+    -->
+</head>
+
+<body>
+    <h1>Weather api</h1>
+    <h2>날씨예보</h2>
+    <div class="city">지역 : </div>
+    <div class="date">날짜 : </div>
+    <div class="ctemp">현재온도 : </div>
+    <div class="clowtemp">최저온도 : </div>
+    <div class="cheightemp">최고온도 : </div>
+    <div class="cicon">아이콘</div>
+    <img src="" alt="">
+
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        // $(function(){
+        //     $.getJSON("날씨", function(data){
+        //      data 할일   
+        //     })
+        // })
+        $(function(){
+            $.getJSON("https://api.openweathermap.org/data/2.5/forecast?id=1835553&appid=ae2ef5de65e25388a36b43c17b0a6711&units=metric&units=metric", function(data){
+                // console.log(data.cod);
+                // console.log(data.city.name);
+                // console.log(data.list[0].main.temp);
+                var city = data.city.name;
+                var temp = data.list[0].main.temp;
+                var maxTemp = data.list[0].main.temp_max;
+                var minTemp = data.list[0].main.temp_min;
+                var cDate = data.list[0].dt_txt;
+                var wIcon = data.list[0].weather[0].icon;
+                console.log(wIcon)
+                $('.city').append(city);
+                $('h2').prepend(city);
+                $('.date').append(cDate);
+                $('.ctemp').append(temp);
+                $('.clowtemp').append(minTemp);
+                $('.cheightemp').append(maxTemp);
+                $('img').attr('src', `https://openweathermap.org/img/wn/${wIcon}.png`);
+            })
+        })
+    </script>
+</body>
+</html>

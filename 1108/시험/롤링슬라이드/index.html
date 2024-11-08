@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            border: none;
+            vertical-align: top;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            width: 80px;
+        }
+
+        /*img의 크기 72px - 여백(8px)*/
+
+        h1 {
+            text-align: center;
+        }
+
+        #banner_wrap {
+            width: 260px;
+            padding: 10px 20px;
+            margin: 0 auto;
+            border: 1px solid #aaa;
+        }
+
+        #banner {
+            width: 800px;
+            border: 1px solid red;
+            height: 54px;
+            transition: all 0.5s;
+        }
+
+        #frame {
+            width: 232px;
+            height: 54px;
+            position: relative;
+            margin: 10px auto;
+            border: 1px solid blue;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>롤링 슬라이드 배너 만들기</h1>
+    <div id="banner_wrap">
+        <div id="frame">
+            <ul id="banner">
+                <li><a href="#"><img src="images/pic_t1.jpg" alt="사진1"></a></li>
+                <li><a href="#"><img src="images/pic_t2.jpg" alt="사진1"></a></li>
+                <li><a href="#"><img src="images/pic_t3.jpg" alt="사진1"></a></li>
+                <li><a href="#"><img src="images/pic_t4.jpg" alt="사진1"></a></li>
+                <li><a href="#"><img src="images/pic_t5.jpg" alt="사진1"></a></li>
+            </ul>
+        </div>
+        <p>
+            <a href="#" class="prev">
+                <img src="images/prev_btn.png" alt="이전 버튼">
+            </a>
+            <a href="#" class="next">
+                <img src="images/next_btn.png" alt="다음 버튼">
+            </a>
+        </p>
+    </div>
+
+    <script>
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+        
+        const banner = document.querySelector('#banner');
+        const bannerLi = document.querySelectorAll('#banner > li');
+
+        const liW = bannerLi[0].offsetWidth;
+        const total = bannerLi.length;
+        let num = 0;
+
+        // clone
+        bannerLi.forEach((i) => {
+            const clone = i.cloneNode(true);
+            banner.append(clone);
+        })
+
+        next.addEventListener('click', nextSlide);
+        prev.addEventListener('click', prevSlide);
+
+        function nextSlide(){
+            if(num == total){
+                num = 0;
+                banner.style.transition = 'none';
+                banner.style.marginLeft = '0px';
+            }
+            setTimeout(function(){
+                num++;
+                banner.style.transition = 'margin-left 0.3s';
+                banner.style.marginLeft = -liW * num + 'px';
+            }, 50)
+        }
+        function prevSlide(){
+            if(num == 0){
+                num = total;
+                banner.style.transition = 'none';
+                banner.style.marginLeft = '0px';
+            }
+            setTimeout(function(){
+                num--;
+                banner.style.transition = 'margin-left 0.3s';
+                banner.style.marginLeft = -liW * num + 'px';
+            }, 50)
+        }
+
+        setInterval(autoplay, 1000);
+        function autoplay(){
+            if(num == total){
+                num = 0;
+                banner.style.transition = 'none';
+                banner.style.marginLeft = '0px';
+            }
+            setTimeout(function(){
+                num++;
+                banner.style.transition = 'margin-left 0.3s';
+                banner.style.marginLeft = -liW * num + 'px';
+            }, 50)
+        }
+    </script>
+</body>
+
+</html>

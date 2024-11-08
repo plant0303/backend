@@ -37,6 +37,8 @@ prev.addEventListener('click', function(){
 
 });
 
+
+// 여기부터 제이쿼리?
 $(function(){
   var swiper = new Swiper('.mySwiper', {
     slidesPerView: 3,
@@ -59,6 +61,15 @@ $(function(){
     }
 
     return false;
+  });
+
+  $('.specialHall_list li').on('mouseover', function(){
+    const index = $(this).index();
+    $('.specialHall_list li').removeClass('on');
+    $(this).addClass('on');
+
+    $('.tapContent > a').css('display', 'none');
+    $('.tapContent > a').eq(index).css('display', 'block');
   })
   
 });

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4-bgscroll</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 3300px;
+    }
+
+    .indicator {
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    div {
+      height: 1050px;
+    }
+
+    div p {
+      color: #fff;
+      margin: 0;
+      padding: 8px;
+    }
+
+    #area1 {
+      background: url(./img/bg-parallaxsample01.jpg) repeat-x;
+      background-position-y: 200px;
+      background-size: cover;
+    }
+
+    #area2 {
+      background: url(./img/bg-parallaxsample02.jpg) repeat-x;
+      background-size: cover;
+    }
+
+    #area3 {
+      background: url(./img/bg-parallaxsample03.jpg) repeat-x;
+      background-size: cover;
+    }
+
+    #area4 {
+      background: url(./img/bg-parallaxsample04.jpg) repeat-x;
+      background-size: cover;
+    }
+
+    #ashColorArea {
+      background: #666;
+    }
+
+    #redColorArea {
+      background: #900;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <h1>스크롤과 자유변형</h1> -->
+  <p class='indicator'>스크롤위치:<span id='sValue'>0</span></p>
+  <div id='area1'>
+    <p>Area1</p>
+  </div>
+  <div id='area2'>
+    <p>Area2</p>
+  </div>
+  <div id='area3'>
+    <p>Area3</p>
+  </div>
+  <div id='ashColorArea'>
+    <p>Ash color area</p>
+  </div>
+  <div id='area4'>
+    <p>Area4</p>
+  </div>
+  <div id='redColorArea'>
+    <p>Red color area</p>
+  </div>
+</body>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+  $(function () {
+    var a2 = $('#area2').offset().top;
+    var a3 = $('#area3').offset().top;
+    var ash = $('#ashColorArea').offset().top;//네번째있는 칼라 진한회색
+    console.log(a2, a3, ash);
+
+    $(window).scroll(function () {
+      var sct = $(this).scrollTop();
+      $("#sValue").text(sct);
+      $('#area1').css('background-position-y', sct);
+      //background-attachment:fixed와 동일한 효과
+      if (sct > a2) {
+        $("#area2").css('background-position-y', sct - a2);
+      } else {
+        $("#area3").css("background-position-y", 'top');
+      }
+      if (sct > a3) {
+        $("#area3").css('background-position-y', (sct - a3) * 2);
+      } else {
+        $("#area3").css("background-position-y", 'top');
+      }
+
+
+      if (sct > ash) {
+        var h4 = sct - ash - 800;
+        console.log(h4);
+        $("#area4").css('background-position-y', h4);
+      } else {
+        $("#area4").css("background-position-y", '-200');
+      }
+
+    });
+
+  });
+</script>
+
+</html>

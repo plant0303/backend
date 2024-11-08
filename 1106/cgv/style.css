@@ -292,3 +292,39 @@ nav ul{width:720px; position: relative;z-index: 999999;}
     object-fit: cover;
 
   }
+
+  #specialHall_wrap{width: 100%; height: 400px; background: #fff;}
+  .specialHall_title_wrap{padding-top: 60px;}
+  .specialHall_title_wrap h3{float: left; font-size: 24px; font-weight: bold; margin-bottom: 20px;}
+  .specialHall_title_wrap .btn_allView{float: right; border: 1px solid #ccc; padding: 7px 30px 7px 10px; display: block; border-radius: 20px; text-decoration: none; color: #222; font-size: 14px; background: url(./img/arrowR_8x13.png) no-repeat 75px center / 10px;}
+  .specialHall_content{margin-top: 50px;}
+  .specialHall_content .tapContent{position: relative; float: left; display: none;}
+  .specialHall_content .tapContent:first-child{display: block;}
+  .specialHall_content .tapContent a{width: 500px; position: absolute; text-decoration: none; color: #333;}
+  .specialHall_content .tapContent a:first-child{display: block;}
+  .specialHall_content .tapContent a .img_wrap img{width: 100%;}
+
+  .specialHall_list{float: right; width: 440px; border-top: 1px solid #ddd;}
+  .specialHall_list li{border: 1px solid transparent; border-bottom: 1px solid #ddd; box-sizing: border-box;}
+  .specialHall_list li.on{border: 1px solid #464343; }
+  .specialHall_list li a{display: flex; justify-content: space-between; padding: 20px; text-decoration: none; color: #333;}
+  .specialHall_list li a strong{font-size: 18px; font-weight: bold;}
+  .specialHall_list li a .specialHall_hashTag_wrap .specialHall_hashTag{background-color: rgba(0, 0, 0, 0.068); padding: 5px; border-radius: 5px; font-size: 14px; color: #666;}
+  
+
+  /* giftcorn */
+#gittcon_wrap{width: 100%;}
+#gittcon_wrap .contents{width: 980px; margin: 0 auto;}
+.giftcon_list_wrap{display: flex; justify-content: space-between}
+.giftcon_list_wrap li{width: 270px; padding: 20px 19px 30px; border: 1px solid #e4e4e4; border-radius: 10px;}
+.giftcon_list_wrap .giftcon_list dt{display: flex; justify-content: space-between; font-size: 20px; font-weight: 500; line-height: 1.45em;}
+.giftcon_list_wrap .giftcon_list dt a.btn_more{padding: 2px 15px 3px; text-decoration: none; color: #666; font-size: 12px; border: 1px solid #f4f4f4; font-weight: 400; line-height: 1.417em; border-radius: 11px;} 
+
+.giftcon_list_wrap > li > dd {margin-top: 25px;}
+.giftcon_list_wrap > li > dd > a{display: flex; align-items: center; justify-content: center; justify-content: space-around; justify-content: flex-start}
+.giftcon_list_wrap > li > dd a .img_wrap{position: relative; width: 75px; height: 76px; border-radius: 5px;}
+.giftcon_list_wrap > li > dd a .img_wrap img{position: absolute; width: 100%; height: 100%; top: 50%; left: 0; object-fit: cover; transform: translate(0, -50%);}
+.giftcon_list_wrap > li > dd a .giftcon_info_wrap{display: flex; flex-direction: column; padding-left: 15px;}
+.giftcon_list_wrap > li > dd a .giftcon_info_wrap span{font-weight: bold; line-height: 1.429em; font-size: 14px;}
+.giftcon_list_wrap > li > dd a .giftcon_info_wrap strong{font-weight: bold; line-height: 1.444em;}
+.giftcon_list_wrap > li > dd a{text-decoration: none; color: #333; letter-spacing: -0.020em;}
