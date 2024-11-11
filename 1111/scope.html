@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function scope(){
+            var x = 10;
+            if(true){
+                var x = 20;
+                console.log("블록내부 x: ", x);
+            }
+            console.log("블록 외부 x: ", x);
+        }
+        scope();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

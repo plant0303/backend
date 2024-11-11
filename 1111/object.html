@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const sum = {
+            name: "Sam",
+            info: {
+                age: "20",
+                class: "JS",
+            },
+        };
+
+        console.log(sum.name);
+        console.log(sum.info.age);
+        console.log(sum.info["age"]);
+        console.log(sum["info"].age);
+        console.log(sum["info"]["age"]);
+
+        sum.etc = function(){
+            return "banana";
+        }
+        document.write(sam.etc());
+        delete sam.info;
+    </script>
+</body>
+</html>
