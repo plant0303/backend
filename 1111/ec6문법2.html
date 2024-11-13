@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // js해체연산자 : 객체의 값을 쉽게 추출해 변수 할당
+        // 1. 배열해체
+        const fruits = ["apple", "banana", "cherry"];
+        const [first, second, third] = fruits;
+        console.log(first, second, third);
+
+        // 2. 부분해체와 기본값
+        const colors = ["red", "green"];
+        const [primary, secondary, tertiary = "blue"] = colors;
+        console.log(primary, secondary, tertiary);
+
+        // 나머지 요소 전체 받기
+        const [fir, sec, ...rest] = "numbers";
+        console.log(fir); // n
+        console.log(sec); // u
+        console.log(rest) // mbers
+
+        // 객체 해체
+        const person = {
+            name: "Alice",
+            age: 25,
+            country: "USA",
+        }
+        const {name, age, country} = person;
+        console.log(name, age, country);
+        
+        // 변수명 변경 빛 기본값 설정
+        const user = {
+            username: "John Doe",
+            email: "asdasd@gmail.com"
+        }
+        const {username, email, phone="N/A"} = user;
+        console.log(username, email, phone)
+
+        // 중첩된객체해체
+        const user1 = {
+            username1: "John Doe Gi",
+            address:{
+                city: "New York",
+                zip: "12767"
+            }
+        };
+
+        const {username1, address:{city, zip}} = user1;
+        console.log(username1, city, zip);
+
+        // 함수 파라미터 해체
+        function great(){
+            console.log(`ㅎㅇ, ${name}, You are ${age} year old`);
+        }
+        const person1 = {name: "Tom", age: 30}
+        great(person);
+
+        // 
+        // 
+        // 
+        const numbers = [1, 2, 3, 4, 5];
+        const doubled = numbers.map(number => number * 2);
+        console.log(doubled);
+
+        const users = [
+            {id : 1, name : "Alice"},
+            {id : 2, name : "Bob"},
+            {id : 3, name : "John"},
+        ];
+        const names = users.map(user => user.name);
+        console.log(names);
+
+        const nums = [10, 20, 30];
+        const widthIndex = nums.map((number, index) => `Index ${index} : ${number}`);
+        console.log(widthIndex);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
