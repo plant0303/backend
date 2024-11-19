@@ -1,6 +1,6 @@
 package a1118;
 
-public class Array1 {
+public class Array4 {
     public static void main(String[] args) {
         String[] season = {"Spring", "Summer", "Fall", "Winter"};
         System.out.println("season[0]" + season[0]);
