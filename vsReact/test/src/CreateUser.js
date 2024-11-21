@@ -1,10 +1,12 @@
-const CreateUser = ({username, email, onChange, onCreate}) => {
-    return (
+
+function CreateUser({username, email, onChange, onCreate}){
+
+    return(
         <div>
-            <input
-                name="username"
-                placeholder="계정명"
-                onChange={onChange}
+            <input 
+                name="username" 
+                placeholder="계정명" 
+                onChange={onChange} 
                 value={username}
             />
             <input
@@ -15,6 +17,6 @@ const CreateUser = ({username, email, onChange, onCreate}) => {
             />
             <button onClick={onCreate}>등록</button>
         </div>
-    )
+    );
 }
 export default CreateUser;

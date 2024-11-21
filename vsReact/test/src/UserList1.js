@@ -1,20 +1,23 @@
-import React, { useRef } from 'react';
+import { useRef } from "react";
+import './App.css';
 
-const User = ({user}) => {
-    return (
+function User({user}){
+    return(
         <div>
-            <b>{user.username}</b><span>({user.email})</span>
+             <b>{user.username}</b><span>({user.email})</span>
         </div>
-    )
+
+    );
+
 }
 
-const UserList = ({users}) => {
+function UserList1({users}){
     return (
         <div>
-            {users.map(user => (
-                <User user={user} key={user.id} />
-            ))}
+           {users.map(user =>(
+          <User user={user} key={user.id}/>
+           ))}
         </div>
-    )
+    );
 }
-export default UserList;
+export default UserList1;
