@@ -5,7 +5,6 @@ public class Student {
     public int age;
     public String studentId;
 
-
     public void setAge(int age) {
         this.age = age;
     }
