@@ -1,4 +1,4 @@
-package a1202.hak5;
+package a1203.hak5;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -43,6 +43,12 @@ public class MainClass {
                 test.userUpdate();
             }else if(choice==5){
                 test.printAll();
+            }else if(choice==6){
+               try{ 
+                test.dataSave();  
+               }catch(Exception e){
+                e.printStackTrace();
+               }  
             }else if(choice==0){
                 System.out.println("종료합니다.");
                 sc.close();

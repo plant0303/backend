@@ -1,11 +1,14 @@
-package a1202.hak5;
+package a1203.hak5;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import a1202.Exception.Exception1;
+
 public class StudentDAO {
     private ArrayList<StudentDTO> slist;
     Scanner sc = new Scanner(System.in);
+    FileClass file = new FileClass("student", "student_Grade");
     public StudentDAO(){ //생성메서드
         slist = new ArrayList<StudentDTO>();
         //기본데이터 - 4명의 더미데이터 생성
@@ -34,7 +37,13 @@ public class StudentDAO {
        slist.set(index, s); 
     }   
 
+
+
+
+
+
     public void userInsert() {
+
         // System.out.println("<학생을 추가하기>");
         // System.out.print("이름 :");
         // String name = sc.next();
@@ -66,8 +75,8 @@ public class StudentDAO {
         
         insert(s);
          System.out.println("학생이 추가 되었습니다.");
+        
     }
-
     public void userDelete() {
         System.out.println("<학생정보삭제>");
         int index = searchIndex();
@@ -79,8 +88,10 @@ public class StudentDAO {
                 //slist.remove(index);
                 System.out.println(name + "학생정보를 삭제했습니다.");
             } 
+            
         }
     
+                
         private int searchIndex() {
         int index = -1;
         System.out.println("학생이름을 입력해 주세요");
@@ -94,7 +105,6 @@ public class StudentDAO {
         }
         return index;
     }
-
     public void userSelect() {
         System.out.println("<학생정보보기>");
         int index = searchIndex();
@@ -125,7 +135,9 @@ public class StudentDAO {
             System.out.print("수학점수 : ");
             s.setMath(sc.nextInt());
             updete(index, s);
+            
             }
+            
         }
     
     public void printAll() {
@@ -135,7 +147,17 @@ public class StudentDAO {
             System.out.println(slist.get(i).toString());
         }
     }
-              
+    public void dataSave() throws Exception {
+        file.create();
+        String str = "이름\t 나이\t 국어\\t 영어\\t 수학\n" + 
+        "-------------------\n";
+        for(int i = 0 ;i < slist.size();i++){
+            str += slist.get(i).toString()+"\n";
+        }
+        file.write(str);
+
+    }
+
              
         
            
