@@ -26,7 +26,7 @@ public class CoffeeService {
 
     // 고객 객체 초기화
     private void initializeCustomer() {
-        customer = new Customer(orderNum); // 주문번호와 잔액 초기화
+        customer = new Customer(orderNum); // 주문번호와 잔액 초기화(인스턴스 생성)
     }
 
     // 주문 받기
