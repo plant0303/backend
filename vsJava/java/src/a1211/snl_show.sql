@@ -1,13 +1,13 @@
 USE celebdb;
 CREATE TABLE snl_show(
-	ID int NOT NULL primary key, auto_increment,
+	ID int NOT NULL primary key auto_increment,
     SEASON int NOT NULL,
     EPISODE int NOT NULL,
     BROADCASTDATE date,
-    m_host varchar(32) NOT NULL
+    host varchar(32) NOT NULL
 );
 
-INSERT INTO snl_show (SEASON, EPISODE, BROADCASTDATE, m_host) VALUE 
+INSERT INTO snl_show (SEASON, EPISODE, BROADCASTDATE, host) VALUE 
 (8, 8, '2020-09-12', '유재석'),
 (8, 9, '2020-09-19', '차승원'),
 (8, 10, '2020-09-26', '이수현'),
@@ -17,3 +17,6 @@ INSERT INTO snl_show (SEASON, EPISODE, BROADCASTDATE, m_host) VALUE
 (9, 4, '2021-09-25', '조정석'),
 (9, 5, '2021-10-02', '조여정'),
 (9, 6, '2021-10-09', '옥주현');
+
+
+SELECT * FROm snl_show;

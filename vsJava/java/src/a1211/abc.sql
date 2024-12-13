@@ -1,4 +1,5 @@
---DB 테이블 생성
+
+-- DB 테이블 생성
 create database if not EXISTS CelebDB;
 USE CelebDB;
 
